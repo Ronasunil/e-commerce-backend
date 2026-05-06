@@ -7,8 +7,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --test",
-    "test:api": "node --test test/api.auth.test.js"
+    "test": "node --test"
   },
   "keywords": [
     "express",
