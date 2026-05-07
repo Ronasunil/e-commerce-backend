@@ -17,3 +17,4 @@ build/
 *.pid
 *.seed
 *.pid.lock
+.gstack/
