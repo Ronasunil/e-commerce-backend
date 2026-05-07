@@ -46,6 +46,41 @@ src/
 - **API surface:** all resources under `/api/v1/...`. Add new resources by creating a route file and mounting it in `src/routes/index.js`.
 - **Imports:** use explicit `.js` extensions (ESM requirement). Relative paths only within `src/`.
 
+## Wiki — engineering memory
+
+A sibling repo at `../e-commerce-wiki/` holds the team's persistent engineering memory: past decisions, bug playbooks, feature flows, concept pages. Treat it as **read-only reference material** during coding work.
+
+### Consult the wiki before
+
+| You're about to... | Check |
+|---|---|
+| Make a non-trivial design or architectural choice | `../e-commerce-wiki/wiki/decisions/` — has this been decided already? Has it been *re-litigated* and we landed somewhere different? |
+| Debug a non-trivial bug | `../e-commerce-wiki/wiki/bugs/` — same symptom seen before? Saves re-tracing. |
+| Implement or modify a feature | `../e-commerce-wiki/wiki/flows/` — read the existing flow page first. Don't reinvent the description. |
+| Hear a familiar pattern name (e.g. "soft-delete", "idempotency key") | `../e-commerce-wiki/wiki/concepts/` — there's likely a page on it. |
+| Get asked "why is this done this way?" or "have we discussed X before?" | Wiki first, then code. The answer to "why" lives in `decisions/`, not the source. |
+
+### How to consult
+
+1. Read `../e-commerce-wiki/index.md` first — it's the catalog. One read tells you what exists.
+2. Open only the 1–3 pages that look relevant (don't load the whole wiki).
+3. **Cite when you use it.** "Per `../e-commerce-wiki/wiki/decisions/use-mongodb.md`, we chose Mongo because of nested attributes — sticking with that here." This lets the user verify and trust.
+4. If the wiki contradicts what the user just asked for → flag it, don't silently override either side.
+
+### When to skip the wiki
+
+- Trivial work (renames, lint fixes, typos, formatting)
+- Clearly unrelated to anything documented (a brand-new domain)
+- The wiki is empty for the relevant section — that's fine, proceed
+
+### Don't write to the wiki mid-session
+
+Only the **end-of-session ritual** writes to the wiki. Don't update it during coding. Mid-session edits fragment the state and break the schema. The wiki gets one coherent update at the end.
+
+### End-of-session capture
+
+When a session produces something worth remembering (decision, non-trivial bug fix, shipped feature, non-obvious discovery), the user will paste the capture-session prompt. At that point: read `../e-commerce-wiki/CLAUDE.md` for the schema, write the raw note + ingest, report back. See `../e-commerce-wiki/APPROACH.md` for the full ritual.
+
 ## gstack
 
 Use the `/browse` skill from gstack for **all** web browsing. **Never** use `mcp__claude-in-chrome__*` tools.
