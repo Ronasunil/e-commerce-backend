@@ -52,6 +52,7 @@ const userSchema = new mongoose.Schema(
     address: { type: addressSchema, default: () => ({}) },
 
     deletedAt: { type: Date, default: null },
+    suspendedAt: { type: Date, default: null },
   },
   {
     timestamps: true,

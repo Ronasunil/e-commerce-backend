@@ -163,6 +163,9 @@ export const authService = {
     if (!auth || auth.deletedAt) {
       throw new ApiError(401, 'invalid credentials');
     }
+    if (auth.suspendedAt) {
+      throw new ApiError(403, 'account suspended');
+    }
     if (!auth.isVerified) {
       throw new ApiError(403, 'unverified', {
         code: 'UNVERIFIED',

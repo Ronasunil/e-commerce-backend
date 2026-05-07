@@ -37,6 +37,7 @@ const authSchema = new mongoose.Schema(
     passwordResetExpiresAt: { type: Date, default: null },
 
     deletedAt: { type: Date, default: null },
+    suspendedAt: { type: Date, default: null },
   },
   {
     timestamps: true,

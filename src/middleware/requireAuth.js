@@ -4,13 +4,15 @@ import { tokenService } from '../services/token.service.js';
 
 /**
  * Verifies JWT signature, extracts authId, loads the user fresh from DB on
- * every request. 401 if token invalid/expired or user soft-deleted. With the
- * always-on transaction in setAccountStatus, users.deletedAt is in sync with
- * auth.deletedAt, so checking only users suffices (saves an auth.findOne).
+ * every request. 401 if token invalid/expired or user soft-deleted; 403 if
+ * suspended (matches login surface, so admin-driven suspension is observable
+ * to the holder of an existing JWT). With the always-on transaction in
+ * setAccountStatus, users.{deletedAt,suspendedAt} are in sync with their auth
+ * counterparts, so checking only users suffices (saves an auth.findOne).
  */
 export const requireAuth = async (req, _res, next) => {
   try {
-    const header = req.headers.authorization || '';
+    const header = req.headers.authorization ;
     if (!header.startsWith('Bearer ')) {
       throw new ApiError(401, 'invalid credentials');
     }
@@ -28,6 +30,7 @@ export const requireAuth = async (req, _res, next) => {
 
     const user = await User.findOne({ authId, deletedAt: null });
     if (!user) throw new ApiError(401, 'invalid credentials');
+    if (user.suspendedAt) throw new ApiError(403, 'account suspended');
 
     req.authId = user.authId;
     req.user = user;
