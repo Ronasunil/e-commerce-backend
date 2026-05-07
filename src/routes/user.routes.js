@@ -5,7 +5,11 @@ import { asyncHandler } from '../middleware/asyncHandler.js';
 import { requireAuth } from '../middleware/requireAuth.js';
 import { requireRole } from '../middleware/requireRole.js';
 import { validate } from '../middleware/validate.js';
-import { updateMeSchema } from '../middleware/validators/user.validators.js';
+import {
+  listUsersQuerySchema,
+  updateMeSchema,
+  updateRoleSchema,
+} from '../middleware/validators/user.validators.js';
 
 const userRouter = Router();
 
@@ -24,6 +28,7 @@ userRouter.get(
   '/',
   requireAuth,
   requireRole('admin'),
+  validate(listUsersQuerySchema, 'query'),
   asyncHandler(userController.listUsers),
 );
 userRouter.get(
@@ -37,6 +42,31 @@ userRouter.delete(
   requireAuth,
   requireRole('admin'),
   asyncHandler(userController.deleteUser),
+);
+userRouter.patch(
+  '/:id/role',
+  requireAuth,
+  requireRole('admin'),
+  validate(updateRoleSchema),
+  asyncHandler(userController.updateUserRole),
+);
+userRouter.post(
+  '/:id/suspend',
+  requireAuth,
+  requireRole('admin'),
+  asyncHandler(userController.suspendUser),
+);
+userRouter.post(
+  '/:id/unsuspend',
+  requireAuth,
+  requireRole('admin'),
+  asyncHandler(userController.unsuspendUser),
+);
+userRouter.post(
+  '/:id/restore',
+  requireAuth,
+  requireRole('admin'),
+  asyncHandler(userController.restoreUser),
 );
 
 export { userRouter };
