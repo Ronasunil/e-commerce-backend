@@ -1,0 +1,327 @@
+# scripts/users.http — manual REST client probes for the user-management feature.
+#
+# Pairs with scripts/auth.http. Authentication is bootstrapped here too — log in
+# as an admin (created via `node scripts/create-admin.js`) and a regular verified
+# user, capture both tokens, then walk the admin endpoints top-to-bottom.
+#
+# Prereqs:
+#   docker compose up -d                       # Mongo replica set
+#   npm run dev
+#   node scripts/create-admin.js               # one-shot admin bootstrap
+#   register + verify-otp a regular user via scripts/auth.http (or below)
+
+@host = http://localhost:3000
+@base = {{host}}/api/v1
+
+# Replace with your admin / user credentials.
+@adminEmail = REPLACE_WITH_ADMIN_EMAIL
+@adminPassword = REPLACE_WITH_ADMIN_PASSWORD
+@userEmail = apitest+manual@example.com
+@userPassword = CorrectHorse123!
+
+
+### admin login
+# @name adminLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{adminEmail}}", "password": "{{adminPassword}}" }
+
+@adminToken = {{adminLogin.response.body.token}}
+@adminId = {{adminLogin.response.body.user._id}}
+
+
+### user login (must already be verified — see scripts/auth.http)
+# @name userLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+@userToken = {{userLogin.response.body.token}}
+@userId = {{userLogin.response.body.user._id}}
+
+
+# ===========================================================================
+# 1. Schema sanity
+# ===========================================================================
+
+### After first GET below, in mongosh confirm: db.users.findOne().suspendedAt → null
+###                                            db.auths.findOne().suspendedAt → null
+
+
+# ===========================================================================
+# 2. List with filters
+# ===========================================================================
+
+### envelope shape — { data, page, limit, total, totalPages }
+GET {{base}}/users?page=1&limit=2
+Authorization: Bearer {{adminToken}}
+
+
+### substring search on email
+GET {{base}}/users?q=apitest
+Authorization: Bearer {{adminToken}}
+
+
+### substring search hits username branch of $or
+GET {{base}}/users?q=apitest_manual
+Authorization: Bearer {{adminToken}}
+
+
+### empty q ignored — full active list
+GET {{base}}/users?q=
+Authorization: Bearer {{adminToken}}
+
+
+### regex special chars escaped — no inflated match, no error
+GET {{base}}/users?q=.*+
+Authorization: Bearer {{adminToken}}
+
+
+### filter: role
+GET {{base}}/users?role=admin
+Authorization: Bearer {{adminToken}}
+
+
+### filter: isVerified true / false
+GET {{base}}/users?isVerified=true
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{base}}/users?isVerified=false
+Authorization: Bearer {{adminToken}}
+
+
+### lifecycle filters
+GET {{base}}/users?status=suspended
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{base}}/users?status=deleted
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{base}}/users?status=all
+Authorization: Bearer {{adminToken}}
+
+
+### bad query: page=abc → 400 with details
+GET {{base}}/users?page=abc
+Authorization: Bearer {{adminToken}}
+
+
+### bad query: limit=9999 → 400 (max 100)
+GET {{base}}/users?limit=9999
+Authorization: Bearer {{adminToken}}
+
+
+### non-admin token → 403
+GET {{base}}/users
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 3. Role change
+# ===========================================================================
+
+### promote user → admin
+PATCH {{base}}/users/{{userId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "admin" }
+
+
+### idempotent — same role → 200 no-op (returns current user)
+PATCH {{base}}/users/{{userId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "admin" }
+
+
+### demote target back
+PATCH {{base}}/users/{{userId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "user" }
+
+
+### self-demote → 400 "cannot demote yourself"
+PATCH {{base}}/users/{{adminId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "user" }
+
+
+### last-admin demote (if you only have one admin) → 400 "cannot demote the last admin"
+# Run only when @adminId is the SOLE active admin in the DB.
+PATCH {{base}}/users/{{adminId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "user" }
+
+
+### invalid role payload → 400 from joi
+PATCH {{base}}/users/{{userId}}/role
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "role": "superadmin" }
+
+
+# ===========================================================================
+# 4. Suspend / unsuspend
+# ===========================================================================
+
+### suspend → 200 with {message, id, suspendedAt}
+POST {{base}}/users/{{userId}}/suspend
+Authorization: Bearer {{adminToken}}
+
+
+### dual-collection write check (run in mongosh):
+###   db.auths.findOne({_id: ObjectId('<authId>')}).suspendedAt   ← must be set
+###   db.users.findOne({_id: ObjectId('{{userId}}')}).suspendedAt ← must match
+
+
+### suspended user attempts login → 403 "account suspended"
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+
+### still-valid old @userToken now → 403 "account suspended" (not 401)
+GET {{base}}/users/me
+Authorization: Bearer {{userToken}}
+
+
+### suspend already-suspended → 409 "user already suspended"
+POST {{base}}/users/{{userId}}/suspend
+Authorization: Bearer {{adminToken}}
+
+
+### self-suspend → 400 "cannot suspend yourself"
+POST {{base}}/users/{{adminId}}/suspend
+Authorization: Bearer {{adminToken}}
+
+
+### unsuspend → 200, login works again
+POST {{base}}/users/{{userId}}/unsuspend
+Authorization: Bearer {{adminToken}}
+
+
+### unsuspend non-suspended → 404 "user not suspended"
+POST {{base}}/users/{{userId}}/unsuspend
+Authorization: Bearer {{adminToken}}
+
+
+### login after unsuspend → 200
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+
+# ===========================================================================
+# 5. Soft-delete + restore
+# ===========================================================================
+
+### admin soft-deletes target
+DELETE {{base}}/users/{{userId}}
+Authorization: Bearer {{adminToken}}
+
+
+### list with status=deleted → includes the target
+GET {{base}}/users?status=deleted
+Authorization: Bearer {{adminToken}}
+
+
+### restore → 200, deletedAt cleared
+POST {{base}}/users/{{userId}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+### login post-restore → 200
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+
+### restore non-deleted → 404 "user not deleted"
+POST {{base}}/users/{{userId}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+### suspend → delete → unsuspend should 404 (deleted-and-suspended hidden)
+# Run sequentially:
+POST {{base}}/users/{{userId}}/suspend
+Authorization: Bearer {{adminToken}}
+
+###
+DELETE {{base}}/users/{{userId}}
+Authorization: Bearer {{adminToken}}
+
+###  unsuspend the deleted-and-suspended user → 404 (forces "restore first")
+POST {{base}}/users/{{userId}}/unsuspend
+Authorization: Bearer {{adminToken}}
+
+### restore brings deletedAt to null but suspendedAt stays set (independent flags)
+POST {{base}}/users/{{userId}}/restore
+Authorization: Bearer {{adminToken}}
+
+###  now unsuspend works
+POST {{base}}/users/{{userId}}/unsuspend
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 6. Authorization regression
+# ===========================================================================
+
+### every new admin endpoint with @userToken → 403
+PATCH {{base}}/users/{{adminId}}/role
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "role": "user" }
+
+###
+POST {{base}}/users/{{adminId}}/suspend
+Authorization: Bearer {{userToken}}
+
+###
+POST {{base}}/users/{{adminId}}/unsuspend
+Authorization: Bearer {{userToken}}
+
+###
+POST {{base}}/users/{{adminId}}/restore
+Authorization: Bearer {{userToken}}
+
+
+### no token → 401
+GET {{base}}/users
+
+
+# ===========================================================================
+# 7. Existing-flow regression (PRD verification step #8)
+# ===========================================================================
+
+### regular login still works (already covered above, sanity)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+
+### PATCH /users/me allowlist still rejects unknown
+PATCH {{base}}/users/me
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "email": "hijack@example.com" }
