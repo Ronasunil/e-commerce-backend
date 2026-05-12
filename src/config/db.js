@@ -7,23 +7,33 @@ export const connectDb = async () => {
     serverSelectionTimeoutMS: 5000,
   });
 
-  const helloRes = await mongoose.connection.db
-    .admin()
-    .command({ hello: 1 });
+  console.log('Mongo connected');
+};
 
-  if (!helloRes.setName) {
-    throw new Error(
-      'Mongo must run in replica-set mode for transactions. ' +
-        'Run `docker compose up -d` to start a local replica set ' +
-        '(see docker-compose.yml).',
+// Boot-time probe: warn loudly on a misconfigured replica set, but continue
+// startup. Multi-collection transactions (auth register, setAccountStatus)
+// silently degrade to non-atomic writes without a replica set.
+export const probeReplicaSet = async () => {
+  try {
+    const status = await mongoose.connection.db
+      .admin()
+      .command({ replSetGetStatus: 1 });
+    console.log(
+      `Mongo replica set OK (name: ${status.set}, members: ${status.members?.length ?? '?'})`,
+    );
+  } catch (err) {
+    console.warn(
+      '[WARN] Mongo replica-set probe failed. Transactions will silently ' +
+        'degrade to non-atomic writes; auth register and setAccountStatus ' +
+        'can leave partial state on failure. ' +
+        'Run `docker compose up -d` for a local replica set. ' +
+        `(${err?.message || err})`,
     );
   }
-
-  console.log(
-    `Mongo connected (replica set: ${helloRes.setName}, primary: ${helloRes.primary})`,
-  );
 };
 
 export const disconnectDb = async () => {
   await mongoose.disconnect();
 };
+
+export const isDbHealthy = () => mongoose.connection.readyState === 1;

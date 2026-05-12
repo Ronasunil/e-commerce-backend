@@ -42,13 +42,26 @@ export const config = {
     expiryMin: parseInt10(process.env.RESET_TOKEN_EXPIRY_MIN, 30),
   },
   corsOrigin: process.env.CORS_ORIGIN || '*',
+  trustProxy: parseInt10(process.env.TRUST_PROXY, 0),
 };
 
 export const isProduction = config.nodeEnv === 'production';
 export const isDevelopment = config.nodeEnv === 'development';
 
 if (isProduction && config.otp.dummy) {
+  throw new Error(
+    'OTP_DUMMY=true is not allowed in production. Set OTP_DUMMY=false and wire a real provider before deploy.',
+  );
+}
+
+if (isProduction && config.corsOrigin === '*') {
+  throw new Error(
+    'CORS_ORIGIN="*" is not allowed in production. Set CORS_ORIGIN to your frontend origin(s).',
+  );
+}
+
+if (isProduction && config.trustProxy === 0) {
   console.warn(
-    '[WARN] OTP_DUMMY=true in production. Anyone can verify any account by entering "1234". Set OTP_DUMMY=false and wire a real provider.',
+    '[WARN] TRUST_PROXY=0 in production. If you run behind a load balancer or reverse proxy, set TRUST_PROXY=1 (or the hop count) so req.ip resolves correctly for rate-limiting and audit logs.',
   );
 }

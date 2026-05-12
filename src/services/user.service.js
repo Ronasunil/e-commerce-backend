@@ -1,17 +1,9 @@
-import mongoose from 'mongoose';
-
 import { Auth } from '../models/Auth.js';
 import { User } from '../models/User.js';
 import { ApiError } from '../utils/ApiError.js';
+import { assertObjectId } from '../utils/assertObjectId.js';
+import { escapeRegex } from '../utils/escapeRegex.js';
 import { authService } from './auth.service.js';
-
-const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const assertObjectId = (id) => {
-  if (!mongoose.isValidObjectId(id)) {
-    throw new ApiError(404, 'user not found');
-  }
-};
 
 // Shared guard: prevent leaving the system without an active admin.
 // Used by updateUserRole and suspendUser; will pick up admin self-delete later.
@@ -87,7 +79,7 @@ export const userService = {
   },
 
   async getUserById(id) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     const user = await User.findOne({ _id: id, deletedAt: null }).lean();
     if (!user) {
       throw new ApiError(404, 'user not found');
@@ -96,7 +88,7 @@ export const userService = {
   },
 
   async softDeleteUser(id) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     const user = await User.findOne({ _id: id, deletedAt: null });
     if (!user) {
       throw new ApiError(404, 'user not found');
@@ -110,7 +102,7 @@ export const userService = {
   },
 
   async updateUserRole(actingAuthId, id, newRole) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     const target = await User.findOne({
       _id: id,
       deletedAt: null,
@@ -137,7 +129,7 @@ export const userService = {
   },
 
   async suspendUser(actingAuthId, id) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     const target = await User.findById(id);
     if (!target) {
       throw new ApiError(404, 'user not found');
@@ -159,7 +151,7 @@ export const userService = {
   },
 
   async unsuspendUser(id) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     // Deliberately exclude deleted users — admin must restore first.
     const target = await User.findOne({
       _id: id,
@@ -175,7 +167,7 @@ export const userService = {
   },
 
   async restoreUser(id) {
-    assertObjectId(id);
+    assertObjectId(id, 'user');
     const target = await User.findOne({
       _id: id,
       deletedAt: { $ne: null },

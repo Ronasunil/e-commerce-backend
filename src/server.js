@@ -1,9 +1,10 @@
 import { app } from './app.js';
 import { config } from './config/env.js';
-import { connectDb, disconnectDb } from './config/db.js';
+import { connectDb, disconnectDb, probeReplicaSet } from './config/db.js';
 
 const start = async () => {
   await connectDb();
+  await probeReplicaSet();
 
   const server = app.listen(config.port, () => {
     console.log(`Server running on port ${config.port} (${config.nodeEnv})`);
@@ -30,7 +31,10 @@ const start = async () => {
 
   process.on('uncaughtException', (err) => {
     console.error('Uncaught Exception:', err);
-    process.exit(1);
+    server.close(async () => {
+      await disconnectDb();
+      process.exit(1);
+    });
   });
 };
 

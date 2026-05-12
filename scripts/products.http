@@ -1,0 +1,558 @@
+# scripts/products.http — manual REST client probes for the products feature.
+#
+# Pairs with scripts/auth.http and scripts/users.http. Two URL families:
+#   /api/v1/products          public, no auth, live products only
+#   /api/v1/admin/products    admin (requireAuth + requireRole), full lifecycle
+#
+# Prereqs:
+#   docker compose up -d                       # Mongo replica set
+#   npm run dev
+#   node scripts/create-admin.js               # admin bootstrap
+#   register + verify-otp a regular user via scripts/auth.http
+
+@host = http://localhost:3000
+@base = {{host}}/api/v1
+
+# Replace with your admin / user credentials.
+@adminEmail = REPLACE_WITH_ADMIN_EMAIL
+@adminPassword = REPLACE_WITH_ADMIN_PASSWORD
+@userEmail = apitest+manual@example.com
+@userPassword = CorrectHorse123!
+
+
+### admin login
+# @name adminLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{adminEmail}}", "password": "{{adminPassword}}" }
+
+@adminToken = {{adminLogin.response.body.token}}
+
+
+### user login (must already be verified)
+# @name userLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+@userToken = {{userLogin.response.body.token}}
+
+
+# ===========================================================================
+# 1. Schema bring-up — create a live product (A) and a draft (B)
+# ===========================================================================
+
+### create A — admin will publish via PATCH below
+# @name createA
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "Winter Jacket",
+  "slug": "winter-jacket-2026",
+  "description": "Insulated, waterproof.",
+  "price": 199.99,
+  "currency": "USD",
+  "stockQty": 50,
+  "images": ["https://cdn.example.com/winter-jacket-front.jpg"],
+  "category": "outerwear",
+  "isActive": true
+}
+
+@idA = {{createA.response.body._id}}
+
+
+### create B — left as draft (isActive omitted, defaults to false)
+# @name createB
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "Summer Hat",
+  "slug": "summer-hat-2026",
+  "price": 29.99,
+  "currency": "USD",
+  "stockQty": 200,
+  "category": "headwear"
+}
+
+@idB = {{createB.response.body._id}}
+
+
+# ===========================================================================
+# 2. Slug uniqueness
+# ===========================================================================
+
+### duplicate slug on create → 409
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "Another Winter Jacket",
+  "slug": "winter-jacket-2026",
+  "price": 99.99
+}
+
+
+### duplicate slug on patch → 409
+PATCH {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "slug": "summer-hat-2026" }
+
+
+# ===========================================================================
+# 3. Validation (admin writes)
+# ===========================================================================
+
+### bad slug (not kebab-case) → 400
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "x", "slug": "Bad Slug", "price": 1 }
+
+
+### negative price → 400
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "x", "slug": "neg-price", "price": -1 }
+
+
+### bad image URL → 400
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "x", "slug": "bad-img", "price": 1, "images": ["not-a-url"] }
+
+
+### currency length != 3 → 400
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "x", "slug": "bad-cur", "price": 1, "currency": "usdollar" }
+
+
+### empty patch body → 400 "at least one field required"
+PATCH {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{}
+
+
+# ===========================================================================
+# 4. Validation (list queries)
+# ===========================================================================
+
+### page=abc → 400
+GET {{base}}/products?page=abc
+
+### limit=9999 → 400 (max 100)
+GET {{base}}/products?limit=9999
+
+### public schema rejects ?status= → 400 "status is not allowed"
+GET {{base}}/products?status=draft
+
+### admin status=foo → 400 (joi enum)
+GET {{base}}/admin/products?status=foo
+Authorization: Bearer {{adminToken}}
+
+### admin page=abc → 400
+GET {{base}}/admin/products?page=abc
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 5. Authorization on admin URL family
+# ===========================================================================
+
+### no token → 401
+POST {{base}}/admin/products
+Content-Type: application/json
+
+{ "name": "noauth", "slug": "noauth", "price": 1 }
+
+
+### user token → 403
+POST {{base}}/admin/products
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "name": "noauth", "slug": "userauth", "price": 1 }
+
+
+### user token on admin list → 403
+GET {{base}}/admin/products
+Authorization: Bearer {{userToken}}
+
+
+### no token on admin list → 401
+GET {{base}}/admin/products
+
+
+### no token on restore → 401
+POST {{base}}/admin/products/{{idA}}/restore
+
+
+# ===========================================================================
+# 6. Public list (anonymous-only behavior)
+# ===========================================================================
+
+### no token: A only (live), B hidden
+GET {{base}}/products
+
+
+### user token: A only (no auth middleware on public URL)
+GET {{base}}/products
+Authorization: Bearer {{userToken}}
+
+
+### admin token has no effect on public URL — A only
+GET {{base}}/products
+Authorization: Bearer {{adminToken}}
+
+
+### bad token: A only (token never inspected)
+GET {{base}}/products
+Authorization: Bearer notajwt
+
+
+### substring search on name
+GET {{base}}/products?q=Winter
+
+
+### regex special chars escaped — no error, no inflated match
+GET {{base}}/products?q=.*+
+
+
+### category filter
+GET {{base}}/products?category=outerwear
+
+
+# ===========================================================================
+# 7. Admin list (full lifecycle)
+# ===========================================================================
+
+### admin no status — A and B (drafts + live, no trash)
+GET {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+
+
+### admin status=live → only A
+GET {{base}}/admin/products?status=live
+Authorization: Bearer {{adminToken}}
+
+
+### admin status=draft → only B
+GET {{base}}/admin/products?status=draft
+Authorization: Bearer {{adminToken}}
+
+
+### admin status=deleted → empty (initially)
+GET {{base}}/admin/products?status=deleted
+Authorization: Bearer {{adminToken}}
+
+
+### admin status=all → A and B (and any deleted, once present)
+GET {{base}}/admin/products?status=all
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 8. Public getById (existence cloaking)
+# ===========================================================================
+
+### live → 200
+GET {{base}}/products/{{idA}}
+
+
+### draft → 404 (not 403)
+GET {{base}}/products/{{idB}}
+
+
+### admin token does not unlock public URL — draft still 404
+GET {{base}}/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+
+
+### invalid ObjectId → 404
+GET {{base}}/products/not-an-objectid
+
+
+### valid ObjectId, no doc → 404
+GET {{base}}/products/64b8f7a1c2d3e4f5a6b7c8d9
+
+
+# ===========================================================================
+# 9. Admin getById (full visibility)
+# ===========================================================================
+
+### live → 200
+GET {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+
+
+### draft → 200 (admin sees it)
+GET {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+
+
+### bad id → 404
+GET {{base}}/admin/products/bad-id
+Authorization: Bearer {{adminToken}}
+
+
+### no token → 401
+GET {{base}}/admin/products/{{idA}}
+
+
+### user token → 403
+GET {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 10. Publish / unpublish lifecycle
+# ===========================================================================
+
+### publish B
+PATCH {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "isActive": true }
+
+
+### public list now contains A and B
+GET {{base}}/products
+
+
+### unpublish B
+PATCH {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "isActive": false }
+
+
+### public list is back to A only
+GET {{base}}/products
+
+
+# ===========================================================================
+# 11. Update fields
+# ===========================================================================
+
+### update price + stockQty
+PATCH {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "price": 249.50, "stockQty": 0 }
+
+
+### update images
+PATCH {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "images": ["https://example.com/a.png", "https://example.com/b.png"] }
+
+
+### update slug to free space for new-slug check
+PATCH {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "slug": "winter-jacket-renamed" }
+
+
+# ===========================================================================
+# 12. Soft delete + restore
+# ===========================================================================
+
+### delete A → 200 with deletedAt
+DELETE {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+
+
+### public 404 on deleted
+GET {{base}}/products/{{idA}}
+
+
+### admin still sees A with deletedAt set
+GET {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+
+
+### admin status=deleted contains A
+GET {{base}}/admin/products?status=deleted
+Authorization: Bearer {{adminToken}}
+
+
+### re-delete → 404
+DELETE {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+
+
+### restore → 200, deletedAt cleared
+POST {{base}}/admin/products/{{idA}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+### A back in public list
+GET {{base}}/products
+
+
+### re-restore → 404 "product not deleted"
+POST {{base}}/admin/products/{{idA}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+# ---------- deleted-from-draft round-trip preserves isActive ----------------
+
+### make B a draft
+PATCH {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "isActive": false }
+
+
+### delete B (while draft)
+DELETE {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+
+
+### restore B → still a draft (isActive:false preserved)
+POST {{base}}/admin/products/{{idB}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+### public list does NOT contain B (still a draft)
+GET {{base}}/products
+
+
+### publish B
+PATCH {{base}}/admin/products/{{idB}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "isActive": true }
+
+
+### public list now contains B
+GET {{base}}/products
+
+
+# ---------- slug uniqueness across deleted ----------------------------------
+
+### delete A
+DELETE {{base}}/admin/products/{{idA}}
+Authorization: Bearer {{adminToken}}
+
+
+### create with A's slug → 409 (deleted products keep their slug)
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "Reuse", "slug": "winter-jacket-renamed", "price": 1 }
+
+
+### restore A so other probes still pass
+POST {{base}}/admin/products/{{idA}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+# ---------- patch on a deleted product is allowed by design -----------------
+
+### create C
+# @name createC
+POST {{base}}/admin/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "name": "Typo Item", "slug": "typo-item", "price": 1, "description": "old typo" }
+
+@idC = {{createC.response.body._id}}
+
+
+### delete C
+DELETE {{base}}/admin/products/{{idC}}
+Authorization: Bearer {{adminToken}}
+
+
+### patch C (still deleted) → 200 with new description, deletedAt still set
+PATCH {{base}}/admin/products/{{idC}}
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "description": "fixed typo" }
+
+
+### admin getById confirms patched description AND deletedAt set
+GET {{base}}/admin/products/{{idC}}
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 13. Pagination envelope
+# ===========================================================================
+
+### public — totalPages reflects live-only count
+GET {{base}}/products?page=1&limit=10
+
+
+### admin — totalPages reflects all-non-deleted count
+GET {{base}}/admin/products?page=1&limit=10
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 14. Suspended-user storefront access
+# ===========================================================================
+# Run the suspend probe from scripts/users.http first to suspend the regular
+# user, then verify:
+#   - public catalog still reachable (no auth middleware on /products)
+#   - admin URL responds 403 "account suspended" (requireAuth surfaces state)
+
+### still 200 — public URL doesn't read the token
+GET {{base}}/products
+Authorization: Bearer {{userToken}}
+
+
+### 403 "account suspended" — requireAuth fires on admin URL
+GET {{base}}/admin/products
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 15. Existing flows untouched (regression checks)
+# ===========================================================================
+
+### auth/register still works
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "regression+products@example.com",
+  "username": "regprod",
+  "password": "CorrectHorse123!"
+}
+
+
+### users/me still works for the regular user (when active)
+GET {{base}}/users/me
+Authorization: Bearer {{userToken}}

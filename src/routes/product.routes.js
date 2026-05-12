@@ -2,13 +2,20 @@ import { Router } from 'express';
 
 import { productController } from '../controllers/product.controller.js';
 import { asyncHandler } from '../middleware/asyncHandler.js';
+import { validate } from '../middleware/validate.js';
+import { listPublicProductsQuerySchema } from '../middleware/validators/product.validators.js';
 
 const productRouter = Router();
 
-productRouter.get('/', asyncHandler(productController.list));
-productRouter.get('/:id', asyncHandler(productController.getById));
-productRouter.post('/', asyncHandler(productController.create));
-productRouter.patch('/:id', asyncHandler(productController.update));
-productRouter.delete('/:id', asyncHandler(productController.remove));
+// Public catalog. No auth middleware: anyone can browse, even with no token
+// or a bad token. The service hard-filters to live products only.
+
+productRouter.get(
+  '/',
+  validate(listPublicProductsQuerySchema, 'query'),
+  asyncHandler(productController.publicList),
+);
+
+productRouter.get('/:id', asyncHandler(productController.publicGetById));
 
 export { productRouter };

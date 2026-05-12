@@ -1,13 +1,27 @@
 import { productService } from '../services/product.service.js';
 
 export const productController = {
+  // -- Public ----------------------------------------------------------------
+
+  async publicList(req, res) {
+    const result = await productService.listPublic(req.query);
+    res.json(result);
+  },
+
+  async publicGetById(req, res) {
+    const product = await productService.getPublicById(req.params.id);
+    res.json(product);
+  },
+
+  // -- Admin -----------------------------------------------------------------
+
   async list(req, res) {
-    const products = await productService.list(req.query);
-    res.json(products);
+    const result = await productService.listAll(req.query);
+    res.json(result);
   },
 
   async getById(req, res) {
-    const product = await productService.getById(req.params.id);
+    const product = await productService.getAnyById(req.params.id);
     res.json(product);
   },
 
@@ -22,7 +36,12 @@ export const productController = {
   },
 
   async remove(req, res) {
-    await productService.remove(req.params.id);
-    res.status(204).send();
+    const result = await productService.remove(req.params.id);
+    res.json(result);
+  },
+
+  async restore(req, res) {
+    const result = await productService.restore(req.params.id);
+    res.json(result);
   },
 };

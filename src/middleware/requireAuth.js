@@ -12,8 +12,8 @@ import { tokenService } from '../services/token.service.js';
  */
 export const requireAuth = async (req, _res, next) => {
   try {
-    const header = req.headers.authorization ;
-    if (!header.startsWith('Bearer ')) {
+    const header = req.headers.authorization;
+    if (!header || !header.startsWith('Bearer ')) {
       throw new ApiError(401, 'invalid credentials');
     }
     const token = header.slice('Bearer '.length).trim();
