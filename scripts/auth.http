@@ -1,0 +1,259 @@
+# scripts/auth.http — manual REST client probes for the auth feature.
+#
+# Pairs with scripts/test-auth.sh (the automated runner). This file is for
+# poking individual endpoints by hand from VS Code (REST Client extension),
+# IntelliJ, or JetBrains Rider HTTP client. Variables are chained: run the
+# requests top-to-bottom in a single session and the @authId / @token
+# captures will flow through.
+#
+# Prereqs identical to test-auth.sh — see that file's header.
+
+@host = http://localhost:3000
+@base = {{host}}/api/v1
+
+# Pick fresh values per session if you want to rerun:
+@email = apitest+manual@example.com
+@username = apitest_manual
+@password = CorrectHorse123!
+@newPassword = Battery_Staple_456!
+
+###  health
+GET {{host}}/health
+
+
+### register
+# Captures: authId from { authId, message }
+# @name register
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+@authId = {{register.response.body.authId}}
+
+
+### register again — should 409
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+
+### login while UNVERIFIED — expect 403 with code:UNVERIFIED + authId
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "{{email}}",
+  "password": "{{password}}"
+}
+
+
+### resend-otp — server logs new otp (in dummy mode the otp is always "1234")
+POST {{base}}/auth/resend-otp
+Content-Type: application/json
+
+{ "authId": "{{authId}}" }
+
+
+### verify-otp wrong — expect 400
+POST {{base}}/auth/verify-otp
+Content-Type: application/json
+
+{ "authId": "{{authId}}", "otp": "9999" }
+
+
+### verify-otp dummy mode — accepts only "1234"
+# Captures: token, user
+# @name verifyOtp
+POST {{base}}/auth/verify-otp
+Content-Type: application/json
+
+{ "authId": "{{authId}}", "otp": "1234" }
+
+@token = {{verifyOtp.response.body.token}}
+
+
+### login (now verified)
+# @name login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "{{email}}",
+  "password": "{{password}}"
+}
+
+@token = {{login.response.body.token}}
+
+
+### login wrong password — expect 401 "invalid credentials" (no enumeration)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "{{email}}",
+  "password": "wrong-password"
+}
+
+
+### login unknown user — expect identical 401 (no enumeration)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "nobody-here@example.com",
+  "password": "anything"
+}
+
+
+### GET /users/me — happy path
+GET {{base}}/users/me
+Authorization: Bearer {{token}}
+
+
+### GET /users/me — no auth header → 401
+GET {{base}}/users/me
+
+
+### PATCH /users/me — happy path (allowlist fields land at top level)
+PATCH {{base}}/users/me
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "bio": "manual test bio",
+  "phone": "+15551234567",
+  "picture": "https://example.com/pic.png",
+  "gender": "prefer_not_to_say",
+  "dateOfBirth": "1990-01-15",
+  "address": {
+    "line1": "123 Main",
+    "city": "Brooklyn",
+    "state": "NY",
+    "postalCode": "11201",
+    "country": "US"
+  }
+}
+
+
+### PATCH /users/me — disallowed field → 400 "not allowed"/"unknown field"
+PATCH {{base}}/users/me
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "email": "hijack@example.com" }
+
+
+### change-password — wrong current → 401
+POST {{base}}/auth/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "currentPassword": "definitely-not-it",
+  "newPassword": "{{newPassword}}"
+}
+
+
+### change-password — happy path
+POST {{base}}/auth/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "currentPassword": "{{password}}",
+  "newPassword": "{{newPassword}}"
+}
+
+
+### forgot-password — server console logs the reset token
+POST {{base}}/auth/forgot-password
+Content-Type: application/json
+
+{ "email": "{{email}}" }
+
+
+### reset-password — paste token from server console
+# After forgot-password, look for: "Password reset token for ...: <hex>"
+POST {{base}}/auth/reset-password
+Content-Type: application/json
+
+{
+  "token": "PASTE_TOKEN_FROM_SERVER_CONSOLE",
+  "newPassword": "Reset_Pass_789!"
+}
+
+
+### logout — 200 ack
+POST {{base}}/auth/logout
+Authorization: Bearer {{token}}
+
+
+# ===========================================================================
+# Admin (set @adminToken by logging in as the user from scripts/create-admin.js)
+# ===========================================================================
+
+### admin login
+# @name adminLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "REPLACE_WITH_ADMIN_EMAIL",
+  "password": "REPLACE_WITH_ADMIN_PASSWORD"
+}
+
+@adminToken = {{adminLogin.response.body.token}}
+
+
+### GET /users — non-admin token must get 403
+GET {{base}}/users
+Authorization: Bearer {{token}}
+
+
+### GET /users — admin OK
+GET {{base}}/users
+Authorization: Bearer {{adminToken}}
+
+
+### GET /users/:id — replace with a real id from the list above
+GET {{base}}/users/000000000000000000000000
+Authorization: Bearer {{adminToken}}
+
+
+### DELETE /users/:id — destructive, soft-deletes the target account
+DELETE {{base}}/users/000000000000000000000000
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# Self soft-delete (destructive, run last)
+# ===========================================================================
+
+### DELETE /users/me — soft-delete self (transactional across auth+users)
+DELETE {{base}}/users/me
+Authorization: Bearer {{token}}
+
+
+### After self-delete: still-valid JWT → 401 (requireAuth re-loads from DB)
+GET {{base}}/users/me
+Authorization: Bearer {{token}}
+
+
+### After self-delete: login → 401, identical to bad-password (no enumeration)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "emailOrUsername": "{{email}}",
+  "password": "{{newPassword}}"
+}

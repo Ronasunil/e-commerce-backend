@@ -1,0 +1,2065 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fgarrytan%2Fgbrain
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "garrytan" [ref=e36] [cursor=pointer]:
+            - /url: /garrytan
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "gbrain" [ref=e39] [cursor=pointer]:
+              - /url: /garrytan/gbrain
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 1.9k" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e48]
+                - text: Fork
+                - generic "1,894" [ref=e50]: 1.9k
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e54]
+                - text: Star
+                - generic "14605 users starred this repository" [ref=e56]: 14.6k
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /garrytan/gbrain
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues 120" [ref=e65] [cursor=pointer]:
+              - /url: /garrytan/gbrain/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+              - generic "120" [ref=e70]
+          - listitem [ref=e71]:
+            - link "Pull requests 210" [ref=e72] [cursor=pointer]:
+              - /url: /garrytan/gbrain/pulls
+              - img [ref=e73]
+              - generic [ref=e75]: Pull requests
+              - generic "210" [ref=e76]
+          - listitem [ref=e77]:
+            - link "Actions" [ref=e78] [cursor=pointer]:
+              - /url: /garrytan/gbrain/actions
+              - img [ref=e79]
+              - generic [ref=e81]: Actions
+          - listitem [ref=e82]:
+            - link "Projects" [ref=e83] [cursor=pointer]:
+              - /url: /garrytan/gbrain/projects
+              - img [ref=e84]
+              - generic [ref=e86]: Projects
+          - listitem [ref=e87]:
+            - link "Security and quality" [ref=e88] [cursor=pointer]:
+              - /url: /garrytan/gbrain/security
+              - img [ref=e89]
+              - generic [ref=e91]: Security and quality
+          - listitem [ref=e92]:
+            - link "Insights" [ref=e93] [cursor=pointer]:
+              - /url: /garrytan/gbrain/pulse
+              - img [ref=e94]
+              - generic [ref=e96]: Insights
+    - generic [ref=e109]:
+      - heading "garrytan/gbrain" [level=1] [ref=e111]
+      - generic [ref=e112]:
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - button "master branch" [ref=e119] [cursor=pointer]:
+                - generic [ref=e120]:
+                  - generic [ref=e122]:
+                    - img [ref=e124]
+                    - generic [ref=e127]: master
+                  - generic:
+                    - img
+              - generic [ref=e128]:
+                - link "Go to Branches page" [ref=e129] [cursor=pointer]:
+                  - /url: /garrytan/gbrain/branches
+                  - img [ref=e130]
+                - link "Go to Tags page" [ref=e132] [cursor=pointer]:
+                  - /url: /garrytan/gbrain/tags
+                  - img [ref=e133]
+            - generic [ref=e135]:
+              - button "Go to file" [ref=e138] [cursor=pointer]:
+                - generic [ref=e140]: Go to file
+              - button "Code" [ref=e141] [cursor=pointer]:
+                - generic [ref=e142]:
+                  - generic:
+                    - img
+                  - generic [ref=e143]: Code
+                  - generic:
+                    - img
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - heading "Folders and files" [level=2] [ref=e146]
+              - table "Folders and files" [ref=e147]:
+                - rowgroup:
+                  - row "Name Last commit message Last commit date":
+                    - columnheader "Name"
+                    - columnheader "Last commit message":
+                      - generic "Last commit message"
+                    - columnheader "Last commit date":
+                      - generic "Last commit date"
+                - rowgroup [ref=e148]:
+                  - row "Latest commit History View commit history for this file." [ref=e149]:
+                    - cell "Latest commit History View commit history for this file." [ref=e150]:
+                      - generic [ref=e151]:
+                        - heading "Latest commit" [level=2] [ref=e152]
+                        - generic [ref=e155]:
+                          - heading "History" [level=2] [ref=e156]
+                          - link "View commit history for this file." [ref=e158] [cursor=pointer]:
+                            - /url: /garrytan/gbrain/commits/master/
+                            - generic [ref=e159]:
+                              - generic:
+                                - img
+                  - row ".github, (Directory)" [ref=e160]:
+                    - cell ".github, (Directory)" [ref=e161]:
+                      - generic [ref=e162]:
+                        - img [ref=e163]
+                        - link ".github, (Directory)" [ref=e168] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/.github
+                          - text: .github
+                    - cell [ref=e169]
+                    - cell [ref=e171]
+                  - row "admin, (Directory)" [ref=e174]:
+                    - cell "admin, (Directory)" [ref=e175]:
+                      - generic [ref=e176]:
+                        - img [ref=e177]
+                        - link "admin, (Directory)" [ref=e182] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/admin
+                          - text: admin
+                    - cell [ref=e183]
+                    - cell [ref=e185]
+                  - row "docs, (Directory)" [ref=e188]:
+                    - cell "docs, (Directory)" [ref=e189]:
+                      - generic [ref=e190]:
+                        - img [ref=e191]
+                        - link "docs, (Directory)" [ref=e196] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/docs
+                          - text: docs
+                    - cell [ref=e197]
+                    - cell [ref=e199]
+                  - row "evals, (Directory)" [ref=e202]:
+                    - cell "evals, (Directory)" [ref=e203]:
+                      - generic [ref=e204]:
+                        - img [ref=e205]
+                        - link "evals, (Directory)" [ref=e210] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/evals
+                          - text: evals
+                    - cell [ref=e211]
+                    - cell [ref=e213]
+                  - row "recipes, (Directory)" [ref=e216]:
+                    - cell "recipes, (Directory)" [ref=e217]:
+                      - generic [ref=e218]:
+                        - img [ref=e219]
+                        - link "recipes, (Directory)" [ref=e224] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/recipes
+                          - text: recipes
+                    - cell [ref=e225]
+                    - cell [ref=e227]
+                  - row "scripts, (Directory)" [ref=e230]:
+                    - cell "scripts, (Directory)" [ref=e231]:
+                      - generic [ref=e232]:
+                        - img [ref=e233]
+                        - link "scripts, (Directory)" [ref=e238] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/scripts
+                          - text: scripts
+                    - cell [ref=e239]
+                    - cell [ref=e241]
+                  - row "skills, (Directory)" [ref=e244]:
+                    - cell "skills, (Directory)" [ref=e245]:
+                      - generic [ref=e246]:
+                        - img [ref=e247]
+                        - link "skills, (Directory)" [ref=e252] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/skills
+                          - text: skills
+                    - cell [ref=e253]
+                    - cell [ref=e255]
+                  - row "src, (Directory)" [ref=e258]:
+                    - cell "src, (Directory)" [ref=e259]:
+                      - generic [ref=e260]:
+                        - img [ref=e261]
+                        - link "src, (Directory)" [ref=e266] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/src
+                          - text: src
+                    - cell [ref=e267]
+                    - cell [ref=e269]
+                  - row "templates, (Directory)" [ref=e272]:
+                    - cell "templates, (Directory)" [ref=e273]:
+                      - generic [ref=e274]:
+                        - img [ref=e275]
+                        - link "templates, (Directory)" [ref=e280] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/templates
+                          - text: templates
+                    - cell [ref=e281]
+                    - cell [ref=e283]
+                  - row "test, (Directory)" [ref=e286]:
+                    - cell "test, (Directory)" [ref=e287]:
+                      - generic [ref=e288]:
+                        - img [ref=e289]
+                        - link "test, (Directory)" [ref=e294] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/tree/master/test
+                          - text: test
+                    - cell [ref=e295]
+                    - cell [ref=e297]
+                  - row ".env.testing.example, (File)" [ref=e300]:
+                    - cell ".env.testing.example, (File)" [ref=e301]:
+                      - generic [ref=e302]:
+                        - img [ref=e303]
+                        - link ".env.testing.example, (File)" [ref=e308] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/.env.testing.example
+                          - text: .env.testing.example
+                    - cell [ref=e309]
+                    - cell [ref=e311]
+                  - row ".gitignore, (File)" [ref=e314]:
+                    - cell ".gitignore, (File)" [ref=e315]:
+                      - generic [ref=e316]:
+                        - img [ref=e317]
+                        - link ".gitignore, (File)" [ref=e322] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/.gitignore
+                          - text: .gitignore
+                    - cell [ref=e323]
+                    - cell [ref=e325]
+                  - row ".gitleaks.toml, (File)" [ref=e328]:
+                    - cell ".gitleaks.toml, (File)" [ref=e329]:
+                      - generic [ref=e330]:
+                        - img [ref=e331]
+                        - link ".gitleaks.toml, (File)" [ref=e336] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/.gitleaks.toml
+                          - text: .gitleaks.toml
+                    - cell [ref=e337]
+                    - cell [ref=e339]
+                  - row "AGENTS.md, (File)" [ref=e342]:
+                    - cell "AGENTS.md, (File)" [ref=e343]:
+                      - generic [ref=e344]:
+                        - img [ref=e345]
+                        - link "AGENTS.md, (File)" [ref=e350] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/AGENTS.md
+                          - text: AGENTS.md
+                    - cell [ref=e351]
+                    - cell [ref=e353]
+                  - row "CHANGELOG.md, (File)" [ref=e356]:
+                    - cell "CHANGELOG.md, (File)" [ref=e357]:
+                      - generic [ref=e358]:
+                        - img [ref=e359]
+                        - link "CHANGELOG.md, (File)" [ref=e364] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/CHANGELOG.md
+                          - text: CHANGELOG.md
+                    - cell [ref=e365]
+                    - cell [ref=e367]
+                  - row "CLAUDE.md, (File)" [ref=e370]:
+                    - cell "CLAUDE.md, (File)" [ref=e371]:
+                      - generic [ref=e372]:
+                        - img [ref=e373]
+                        - link "CLAUDE.md, (File)" [ref=e378] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/CLAUDE.md
+                          - text: CLAUDE.md
+                    - cell [ref=e379]
+                    - cell [ref=e381]
+                  - row "CONTRIBUTING.md, (File)" [ref=e384]:
+                    - cell "CONTRIBUTING.md, (File)" [ref=e385]:
+                      - generic [ref=e386]:
+                        - img [ref=e387]
+                        - link "CONTRIBUTING.md, (File)" [ref=e392] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/CONTRIBUTING.md
+                          - text: CONTRIBUTING.md
+                    - cell [ref=e393]
+                    - cell [ref=e395]
+                  - row "INSTALL_FOR_AGENTS.md, (File)" [ref=e398]:
+                    - cell "INSTALL_FOR_AGENTS.md, (File)" [ref=e399]:
+                      - generic [ref=e400]:
+                        - img [ref=e401]
+                        - link "INSTALL_FOR_AGENTS.md, (File)" [ref=e406] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/INSTALL_FOR_AGENTS.md
+                          - text: INSTALL_FOR_AGENTS.md
+                    - cell [ref=e407]
+                    - cell [ref=e409]
+                  - row "LICENSE, (File)" [ref=e412]:
+                    - cell "LICENSE, (File)" [ref=e413]:
+                      - generic [ref=e414]:
+                        - img [ref=e415]
+                        - link "LICENSE, (File)" [ref=e420] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/LICENSE
+                          - text: LICENSE
+                    - cell [ref=e421]
+                    - cell [ref=e423]
+                  - row "README.md, (File)" [ref=e426]:
+                    - cell "README.md, (File)" [ref=e427]:
+                      - generic [ref=e428]:
+                        - img [ref=e429]
+                        - link "README.md, (File)" [ref=e434] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/README.md
+                          - text: README.md
+                    - cell [ref=e435]
+                    - cell [ref=e437]
+                  - row "SECURITY.md, (File)" [ref=e440]:
+                    - cell "SECURITY.md, (File)" [ref=e441]:
+                      - generic [ref=e442]:
+                        - img [ref=e443]
+                        - link "SECURITY.md, (File)" [ref=e448] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/SECURITY.md
+                          - text: SECURITY.md
+                    - cell [ref=e449]
+                    - cell [ref=e451]
+                  - row "TODOS.md, (File)" [ref=e454]:
+                    - cell "TODOS.md, (File)" [ref=e455]:
+                      - generic [ref=e456]:
+                        - img [ref=e457]
+                        - link "TODOS.md, (File)" [ref=e462] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/TODOS.md
+                          - text: TODOS.md
+                    - cell [ref=e463]
+                    - cell [ref=e465]
+                  - row "VERSION, (File)" [ref=e468]:
+                    - cell "VERSION, (File)" [ref=e469]:
+                      - generic [ref=e470]:
+                        - img [ref=e471]
+                        - link "VERSION, (File)" [ref=e476] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/VERSION
+                          - text: VERSION
+                    - cell [ref=e477]
+                    - cell [ref=e479]
+                  - row "bun.lock, (File)" [ref=e482]:
+                    - cell "bun.lock, (File)" [ref=e483]:
+                      - generic [ref=e484]:
+                        - img [ref=e485]
+                        - link "bun.lock, (File)" [ref=e490] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/bun.lock
+                          - text: bun.lock
+                    - cell [ref=e491]
+                    - cell [ref=e493]
+                  - row "bunfig.toml, (File)" [ref=e496]:
+                    - cell "bunfig.toml, (File)" [ref=e497]:
+                      - generic [ref=e498]:
+                        - img [ref=e499]
+                        - link "bunfig.toml, (File)" [ref=e504] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/bunfig.toml
+                          - text: bunfig.toml
+                    - cell [ref=e505]
+                    - cell [ref=e507]
+                  - row "docker-compose.ci.yml, (File)" [ref=e510]:
+                    - cell "docker-compose.ci.yml, (File)" [ref=e511]:
+                      - generic [ref=e512]:
+                        - img [ref=e513]
+                        - link "docker-compose.ci.yml, (File)" [ref=e518] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/docker-compose.ci.yml
+                          - text: docker-compose.ci.yml
+                    - cell [ref=e519]
+                    - cell [ref=e521]
+                  - row "docker-compose.test.yml, (File)" [ref=e524]:
+                    - cell "docker-compose.test.yml, (File)" [ref=e525]:
+                      - generic [ref=e526]:
+                        - img [ref=e527]
+                        - link "docker-compose.test.yml, (File)" [ref=e532] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/docker-compose.test.yml
+                          - text: docker-compose.test.yml
+                    - cell [ref=e533]
+                    - cell [ref=e535]
+                  - row "gbrain.yml, (File)" [ref=e538]:
+                    - cell "gbrain.yml, (File)" [ref=e539]:
+                      - generic [ref=e540]:
+                        - img [ref=e541]
+                        - link "gbrain.yml, (File)" [ref=e546] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/gbrain.yml
+                          - text: gbrain.yml
+                    - cell [ref=e547]
+                    - cell [ref=e549]
+                  - row "llms-full.txt, (File)" [ref=e552]:
+                    - cell "llms-full.txt, (File)" [ref=e553]:
+                      - generic [ref=e554]:
+                        - img [ref=e555]
+                        - link "llms-full.txt, (File)" [ref=e560] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/llms-full.txt
+                          - text: llms-full.txt
+                    - cell [ref=e561]
+                    - cell [ref=e563]
+                  - row "llms.txt, (File)" [ref=e566]:
+                    - cell "llms.txt, (File)" [ref=e567]:
+                      - generic [ref=e568]:
+                        - img [ref=e569]
+                        - link "llms.txt, (File)" [ref=e574] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/llms.txt
+                          - text: llms.txt
+                    - cell [ref=e575]
+                    - cell [ref=e577]
+                  - row "openclaw.plugin.json, (File)" [ref=e580]:
+                    - cell "openclaw.plugin.json, (File)" [ref=e581]:
+                      - generic [ref=e582]:
+                        - img [ref=e583]
+                        - link "openclaw.plugin.json, (File)" [ref=e588] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/openclaw.plugin.json
+                          - text: openclaw.plugin.json
+                    - cell [ref=e589]
+                    - cell [ref=e591]
+                  - row "package.json, (File)" [ref=e594]:
+                    - cell "package.json, (File)" [ref=e595]:
+                      - generic [ref=e596]:
+                        - img [ref=e597]
+                        - link "package.json, (File)" [ref=e602] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/package.json
+                          - text: package.json
+                    - cell [ref=e603]
+                    - cell [ref=e605]
+                  - row "tsconfig.json, (File)" [ref=e608]:
+                    - cell "tsconfig.json, (File)" [ref=e609]:
+                      - generic [ref=e610]:
+                        - img [ref=e611]
+                        - link "tsconfig.json, (File)" [ref=e616] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/tsconfig.json
+                          - text: tsconfig.json
+                    - cell [ref=e617]
+                    - cell [ref=e619]
+            - generic [ref=e623]:
+              - generic [ref=e624]:
+                - heading "Repository files navigation" [level=2] [ref=e625]
+                - navigation "Repository files" [ref=e626]:
+                  - list [ref=e627]:
+                    - listitem [ref=e628]:
+                      - link "README" [ref=e629] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e631]
+                        - generic [ref=e633]: README
+                    - listitem [ref=e634]:
+                      - link "Contributing" [ref=e635] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e637]
+                        - generic [ref=e639]: Contributing
+                    - listitem [ref=e640]:
+                      - link "MIT license" [ref=e641] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e643]
+                        - generic [ref=e645]: MIT license
+                    - listitem [ref=e646]:
+                      - link "Security" [ref=e647] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e649]
+                        - generic [ref=e651]: Security
+                - button "Outline" [ref=e652] [cursor=pointer]:
+                  - img [ref=e653]
+              - article [ref=e656]:
+                - generic [ref=e657]:
+                  - heading "GBrain" [level=1] [ref=e658]
+                  - 'link "Permalink: GBrain" [ref=e659] [cursor=pointer]':
+                    - /url: "#gbrain"
+                    - img [ref=e660]
+                - paragraph [ref=e662]: Your AI agent is smart but forgetful. GBrain gives it a brain.
+                - paragraph [ref=e663]:
+                  - text: "Built by the President and CEO of Y Combinator to run his actual AI agents. The production brain powering his OpenClaw and Hermes deployments:"
+                  - strong [ref=e664]: 17,888 pages, 4,383 people, 723 companies
+                  - text: ", 21 cron jobs running autonomously, built in 12 days. The agent ingests meetings, emails, tweets, voice calls, and original ideas while you sleep. It enriches every person and company it encounters. It fixes its own citations and consolidates memory overnight. You wake up and the brain is smarter than when you went to bed."
+                - paragraph [ref=e665]:
+                  - text: The brain wires itself. Every page write extracts entity references and creates typed links (
+                  - code [ref=e666]: attended
+                  - text: ","
+                  - code [ref=e667]: works_at
+                  - text: ","
+                  - code [ref=e668]: invested_in
+                  - text: ","
+                  - code [ref=e669]: founded
+                  - text: ","
+                  - code [ref=e670]: advises
+                  - text: ") with zero LLM calls. Hybrid search. Self-wiring knowledge graph. Structured timeline. Backlink-boosted ranking. Ask \"who works at Acme AI?\" or \"what did Bob invest in this quarter?\" and get answers vector search alone can't reach. Benchmarked side-by-side against the category: gbrain lands"
+                  - strong [ref=e671]: P@5 49.1%, R@5 97.9%
+                  - text: on a 240-page Opus-generated rich-prose corpus, beating its own graph-disabled variant by
+                  - strong [ref=e672]: +31.4 points P@5
+                  - text: and ripgrep-BM25 + vector-only RAG by a similar margin. The graph layer plus v0.12 extract quality together carry the gap. Full BrainBench scorecards + corpus live in the sibling
+                  - link "gbrain-evals" [ref=e673] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain-evals
+                  - text: repo.
+                - paragraph [ref=e674]: GBrain is those patterns, generalized. 34 skills. Install in 30 minutes. Your agent does the work. As Garry's personal agent gets smarter, so does yours.
+                - paragraph [ref=e675]:
+                  - strong [ref=e676]: "New in v0.25.0 — BrainBench-Real (session capture, contributor opt-in):"
+                  - text: with
+                  - code [ref=e677]: GBRAIN_CONTRIBUTOR_MODE=1
+                  - text: set in your shell, every real
+                  - code [ref=e678]: query
+                  - text: +
+                  - code [ref=e679]: search
+                  - text: call through MCP, CLI, or the subagent tool-bridge gets captured (PII-scrubbed) into an
+                  - code [ref=e680]: eval_candidates
+                  - text: table. Snapshot with
+                  - code [ref=e681]: gbrain eval export
+                  - text: ", replay against your code change with"
+                  - code [ref=e682]: gbrain eval replay
+                  - text: ". Three numbers come back: mean Jaccard@k between captured and current retrieved slugs, top-1 stability, and latency Δ."
+                  - strong [ref=e683]: Off by default
+                  - text: "for production users — no surprise data accumulation. Walkthrough:"
+                  - link "docs/eval-bench.md" [ref=e684] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/eval-bench.md
+                  - text: ". NDJSON wire format:"
+                  - link "docs/eval-capture.md" [ref=e685] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/eval-capture.md
+                  - text: .
+                - paragraph [ref=e686]:
+                  - strong [ref=e687]: "New in v0.28.8 — LongMemEval in the box:"
+                  - code [ref=e688]: gbrain eval longmemeval <dataset.jsonl>
+                  - text: runs the public
+                  - link "LongMemEval" [ref=e689] [cursor=pointer]:
+                    - /url: https://huggingface.co/datasets/xiaowu0162/longmemeval
+                  - text: benchmark against gbrain's hybrid retrieval. One in-memory PGLite per run,
+                  - code [ref=e690]: TRUNCATE
+                  - text: between questions (runtime-enumerated tables, schema-migration-safe), 25.9ms p50 per question on Apple Silicon. Your
+                  - code [ref=e691]: ~/.gbrain
+                  - text: brain is never touched. Retrieved chat content is sanitized with the same
+                  - code [ref=e692]: INJECTION_PATTERNS
+                  - text: that protect takes — one source of truth for prompt-injection defense. Hand the JSONL output to LongMemEval's
+                  - code [ref=e693]: evaluate_qa.py
+                  - text: to score.
+                - blockquote [ref=e694]:
+                  - paragraph [ref=e695]:
+                    - strong [ref=e696]: ~30 minutes to a fully working brain.
+                    - text: Database ready in 2 seconds (PGLite, no server). You just answer questions about API keys.
+                - blockquote [ref=e697]:
+                  - paragraph [ref=e698]:
+                    - strong [ref=e699]: "LLMs:"
+                    - text: fetch
+                    - link "llms.txt" [ref=e700] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/llms.txt
+                      - code [ref=e701]: llms.txt
+                    - text: for the documentation map, or
+                    - link "llms-full.txt" [ref=e702] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/llms-full.txt
+                      - code [ref=e703]: llms-full.txt
+                    - text: for the same map with core docs inlined in one fetch.
+                    - strong [ref=e704]: "Agents:"
+                    - text: start with
+                    - link "AGENTS.md" [ref=e705] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/AGENTS.md
+                      - code [ref=e706]: AGENTS.md
+                    - text: (or
+                    - link "CLAUDE.md" [ref=e707] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/CLAUDE.md
+                      - code [ref=e708]: CLAUDE.md
+                    - text: if you're Claude Code).
+                - blockquote [ref=e709]:
+                  - paragraph [ref=e710]:
+                    - strong [ref=e711]: "Embedding providers:"
+                    - text: OpenAI is the default, but gbrain ships with
+                    - strong [ref=e712]: 14 recipes
+                    - text: covering Voyage, Google Gemini, Azure OpenAI, MiniMax, Alibaba DashScope, Zhipu, Ollama (local), llama.cpp llama-server (local), LiteLLM proxy (universal), and 5 more. Run
+                    - code [ref=e713]: gbrain providers list
+                    - text: to see them, or read
+                    - link "docs/integrations/embedding-providers.md" [ref=e714] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/integrations/embedding-providers.md
+                      - code [ref=e715]: docs/integrations/embedding-providers.md
+                    - text: for setup, pricing, and a decision tree.
+                    - code [ref=e716]: gbrain doctor
+                    - text: will surface alternative providers whose env vars you already have set.
+                - generic [ref=e717]:
+                  - heading "Install" [level=2] [ref=e718]
+                  - 'link "Permalink: Install" [ref=e719] [cursor=pointer]':
+                    - /url: "#install"
+                    - img [ref=e720]
+                - generic [ref=e722]:
+                  - heading "On an agent platform (recommended)" [level=3] [ref=e723]
+                  - 'link "Permalink: On an agent platform (recommended)" [ref=e724] [cursor=pointer]':
+                    - /url: "#on-an-agent-platform-recommended"
+                    - img [ref=e725]
+                - paragraph [ref=e727]: "GBrain is designed to be installed and operated by an AI agent. If you don't have one running yet:"
+                - list [ref=e728]:
+                  - listitem [ref=e729]:
+                    - strong [ref=e730]:
+                      - link "OpenClaw" [ref=e731] [cursor=pointer]:
+                        - /url: https://openclaw.ai
+                    - text: ... Deploy
+                    - link "AlphaClaw on Render" [ref=e732] [cursor=pointer]:
+                      - /url: https://render.com/deploy?repo=https://github.com/chrysb/alphaclaw
+                    - text: (one click, 8GB+ RAM)
+                  - listitem [ref=e733]:
+                    - strong [ref=e734]:
+                      - link "Hermes Agent" [ref=e735] [cursor=pointer]:
+                        - /url: https://github.com/NousResearch/hermes-agent
+                    - text: ... Deploy on
+                    - link "Railway" [ref=e736] [cursor=pointer]:
+                      - /url: https://github.com/praveen-ks-2001/hermes-agent-template
+                    - text: (one click)
+                - paragraph [ref=e737]: "Paste this into your agent:"
+                - generic [ref=e738]:
+                  - code [ref=e740]: "Retrieve and follow the instructions at: https://raw.githubusercontent.com/garrytan/gbrain/master/INSTALL_FOR_AGENTS.md"
+                  - button "Copy" [ref=e742] [cursor=pointer]:
+                    - img [ref=e743]
+                - paragraph [ref=e746]: That's it. The agent clones the repo, installs GBrain, sets up the brain, loads 34 skills, and configures recurring jobs. You answer a few questions about API keys. ~30 minutes.
+                - paragraph [ref=e747]:
+                  - text: If your agent doesn't auto-read
+                  - code [ref=e748]: AGENTS.md
+                  - text: ", point it at that file first:"
+                  - code [ref=e749]: https://raw.githubusercontent.com/garrytan/gbrain/master/AGENTS.md
+                  - text: is the non-Claude agent operating protocol (install, read order, trust boundary, common tasks). For the full doc map, use
+                  - code [ref=e750]: llms.txt
+                  - text: at the same URL root.
+                - generic [ref=e751]:
+                  - heading "Standalone CLI (no agent)" [level=3] [ref=e752]
+                  - 'link "Permalink: Standalone CLI (no agent)" [ref=e753] [cursor=pointer]':
+                    - /url: "#standalone-cli-no-agent"
+                    - img [ref=e754]
+                - generic [ref=e756]:
+                  - generic [ref=e757]:
+                    - text: git clone https://github.com/garrytan/gbrain.git && cd gbrain && bun install && bun link gbrain init
+                    - generic [ref=e758]: "# local brain, ready in 2 seconds"
+                    - text: gbrain import ~/notes/
+                    - generic [ref=e759]: "# index your markdown"
+                    - text: gbrain query
+                    - generic [ref=e760]: "\"what themes show up across my notes?\""
+                  - button "Copy" [ref=e762] [cursor=pointer]:
+                    - img [ref=e763]
+                - paragraph [ref=e766]:
+                  - strong [ref=e767]:
+                    - text: Do NOT use
+                    - code [ref=e768]: bun install -g github:garrytan/gbrain
+                    - text: .
+                  - text: Bun blocks the top-level postinstall hook on global installs, so schema migrations never run and the CLI aborts with
+                  - code [ref=e769]: Aborted()
+                  - text: the first time it opens PGLite. Use
+                  - code [ref=e770]: git clone + bun install && bun link
+                  - text: as shown above. See
+                  - link "#218" [ref=e771] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain/issues/218
+                  - text: .
+                - paragraph [ref=e772]:
+                  - strong [ref=e773]:
+                    - text: Do NOT use
+                    - code [ref=e774]: bun add -g gbrain
+                    - text: or
+                    - code [ref=e775]: npm install -g gbrain
+                    - text: .
+                  - text: The npm registry has an unrelated package squatting that name (
+                  - code [ref=e776]: gbrain@1.3.x
+                  - text: ) — you'd silently install the wrong binary and overwrite the canonical one. v0.28.5+ detects this and prints a recovery message on
+                  - code [ref=e777]: gbrain upgrade
+                  - text: ", but the"
+                  - code [ref=e778]: git clone + bun link
+                  - text: path above is the only reliable install method until we publish under
+                  - code [ref=e779]: "@garrytan/gbrain"
+                  - text: (tracked v0.29 follow-up). See
+                  - link "#658" [ref=e780] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain/issues/658
+                  - text: .
+                - generic [ref=e781]:
+                  - code [ref=e783]: "3 results (hybrid search, 0.12s): 1. concepts/do-things-that-dont-scale (score: 0.94) PG's argument that unscalable effort teaches you what users want. [Source: paulgraham.com, 2013-07-01] 2. originals/founder-mode-observation (score: 0.87) Deep involvement isn't micromanagement if it expands the team's thinking. 3. concepts/build-something-people-want (score: 0.81) The YC motto. Connected to 12 other brain pages."
+                  - button "Copy" [ref=e785] [cursor=pointer]:
+                    - img [ref=e786]
+                - generic [ref=e789]:
+                  - heading "MCP server (Claude Code, Cursor, Windsurf)" [level=3] [ref=e790]
+                  - 'link "Permalink: MCP server (Claude Code, Cursor, Windsurf)" [ref=e791] [cursor=pointer]':
+                    - /url: "#mcp-server-claude-code-cursor-windsurf"
+                    - img [ref=e792]
+                - paragraph [ref=e794]: "GBrain exposes 30+ MCP tools via stdio:"
+                - generic [ref=e795]:
+                  - generic [ref=e796]:
+                    - text: "{ \"mcpServers\": { \"gbrain\": { \"command\":"
+                    - generic [ref=e797]: "\"gbrain\""
+                    - text: ", \"args\": ["
+                    - generic [ref=e798]: "\"serve\""
+                    - text: "] } } }"
+                  - button "Copy" [ref=e800] [cursor=pointer]:
+                    - img [ref=e801]
+                - paragraph [ref=e804]:
+                  - text: Add to
+                  - code [ref=e805]: ~/.claude/server.json
+                  - text: (Claude Code), Settings > MCP Servers (Cursor), or your client's MCP config.
+                - generic [ref=e806]:
+                  - heading "Remote MCP with OAuth 2.1 (ChatGPT, Claude Desktop, Cowork, Perplexity)" [level=3] [ref=e807]
+                  - 'link "Permalink: Remote MCP with OAuth 2.1 (ChatGPT, Claude Desktop, Cowork, Perplexity)" [ref=e808] [cursor=pointer]':
+                    - /url: "#remote-mcp-with-oauth-21-chatgpt-claude-desktop-cowork-perplexity"
+                    - img [ref=e809]
+                - paragraph [ref=e811]:
+                  - code [ref=e812]: gbrain serve --http
+                  - text: starts a production-grade OAuth 2.1 server with an embedded admin dashboard. Zero external infrastructure. Every major AI client connects, every request is scoped, every action is logged.
+                - generic [ref=e813]:
+                  - generic [ref=e814]:
+                    - generic [ref=e815]: "# Start the HTTP server (prints admin bootstrap token on first start)"
+                    - text: gbrain serve --http --port 3131
+                    - generic [ref=e816]: "# Open the admin dashboard, paste the bootstrap token, register a client"
+                    - text: open http://localhost:3131/admin
+                    - generic [ref=e817]: "# Expose publicly (set --public-url so the OAuth issuer matches)"
+                    - text: ngrok http 3131 --url your-brain.ngrok.app gbrain serve --http --port 3131 --public-url https://your-brain.ngrok.app
+                    - generic [ref=e818]: "# ChatGPT and other OAuth-aware clients can also connect:"
+                    - text: claude mcp add gbrain -t http https://your-brain.ngrok.app/mcp -H
+                    - generic [ref=e819]: "\"Authorization: Bearer TOKEN\""
+                  - button "Copy" [ref=e821] [cursor=pointer]:
+                    - img [ref=e822]
+                - paragraph [ref=e825]:
+                  - text: Register OAuth clients from the
+                  - code [ref=e826]: /admin
+                  - text: dashboard — click
+                  - strong [ref=e827]: Register client
+                  - text: ", pick scopes, save the credentials shown once in the reveal modal. Programmatic registration via"
+                  - code [ref=e828]: oauthProvider.registerClientManual(...)
+                  - text: and the
+                  - code [ref=e829]: gbrain auth register-client
+                  - text: CLI are also available.
+                - list [ref=e830]:
+                  - listitem [ref=e831]:
+                    - strong [ref=e832]: OAuth 2.1 via the MCP SDK
+                    - text: "— client credentials (machine-to-machine: Perplexity, Claude), authorization code + PKCE (browser-based: ChatGPT), refresh token rotation, revocation, protected resource metadata. Optional Dynamic Client Registration behind"
+                    - code [ref=e833]: "--enable-dcr"
+                    - text: (DCR redirect_uris must be
+                    - code [ref=e834]: https://
+                    - text: or loopback per RFC 6749 §3.1.2.1).
+                  - listitem [ref=e835]:
+                    - strong [ref=e836]: Scoped operations
+                    - text: — 30 operations tagged
+                    - code [ref=e837]: read | write | admin
+                    - text: .
+                    - code [ref=e838]: sync_brain
+                    - text: and
+                    - code [ref=e839]: file_upload
+                    - text: are
+                    - code [ref=e840]: localOnly
+                    - text: ", rejected over HTTP."
+                  - listitem [ref=e841]:
+                    - strong [ref=e842]: React admin dashboard
+                    - text: — 7 screens baked into the binary (~65KB gzip). Live SSE activity feed, agents table, credential reveal, filterable request log, per-client config export.
+                  - listitem [ref=e843]:
+                    - strong [ref=e844]: Legacy bearer tokens still work
+                    - text: — pre-v0.26
+                    - code [ref=e845]: gbrain auth create
+                    - text: tokens continue to authenticate as
+                    - code [ref=e846]: read+write+admin
+                    - text: . v0.22.7's simpler
+                    - code [ref=e847]: src/mcp/http-transport.ts
+                    - text: path stays compiled in for backward compat callers; v0.26+ deployments use the OAuth-aware
+                    - code [ref=e848]: serve-http.ts
+                    - text: .
+                - paragraph [ref=e849]:
+                  - text: "Per-client guides:"
+                  - link "docs/mcp/" [ref=e850] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/mcp/DEPLOY.md
+                    - code [ref=e851]: docs/mcp/
+                  - text: ". Hardening defaults, env vars, and threat model:"
+                  - link "SECURITY.md" [ref=e852] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/SECURITY.md
+                  - text: .
+                - generic [ref=e853]:
+                  - heading "Using gbrain with GStack" [level=3] [ref=e854]
+                  - 'link "Permalink: Using gbrain with GStack" [ref=e855] [cursor=pointer]':
+                    - /url: "#using-gbrain-with-gstack"
+                    - img [ref=e856]
+                - paragraph [ref=e858]:
+                  - text: If your engineering agent runs on
+                  - link "GStack" [ref=e859] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gstack
+                  - text: ", point it at gbrain for code lookup instead of grep+read. Cathedral II (v0.21.0) ships call-graph edges and two-pass retrieval —"
+                  - code [ref=e860]: /investigate
+                  - text: ","
+                  - code [ref=e861]: /review
+                  - text: ","
+                  - code [ref=e862]: /plan-eng-review
+                  - text: ", and"
+                  - code [ref=e863]: /office-hours
+                  - text: all benefit when the agent walks the symbol graph instead of scanning files line by line.
+                - paragraph [ref=e864]: "The five magical-moment commands:"
+                - generic [ref=e865]:
+                  - generic [ref=e866]:
+                    - text: gbrain code-callers searchKeyword
+                    - generic [ref=e867]: "# who calls this symbol?"
+                    - text: gbrain code-callees searchKeyword
+                    - generic [ref=e868]: "# what does this symbol call?"
+                    - text: gbrain code-def BrainEngine
+                    - generic [ref=e869]: "# where is X defined?"
+                    - text: gbrain code-refs BrainEngine
+                    - generic [ref=e870]: "# all reference sites"
+                    - text: gbrain query
+                    - generic [ref=e871]: "\"how does N+1 handling work\""
+                    - text: "--near-symbol BrainEngine.searchKeyword --walk-depth 2"
+                  - button "Copy" [ref=e873] [cursor=pointer]:
+                    - img [ref=e874]
+                - paragraph [ref=e877]:
+                  - text: All five auto-emit JSON on non-TTY (gh-CLI convention) so a GStack subagent shelling out via bash gets a clean parseable response. Run
+                  - code [ref=e878]: gbrain sources add <repo> --strategy code
+                  - text: to index a repo, then your agent's brain-first lookup covers code, not just markdown. (
+                  - link "Cathedral II release notes" [ref=e879] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/CHANGELOG.md#0210---2026-04-25
+                  - text: )
+                - generic [ref=e880]:
+                  - heading "The 34 Skills" [level=2] [ref=e881]
+                  - 'link "Permalink: The 34 Skills" [ref=e882] [cursor=pointer]':
+                    - /url: "#the-34-skills"
+                    - img [ref=e883]
+                - paragraph [ref=e885]:
+                  - text: GBrain ships 34 skills organized by
+                  - code [ref=e886]: skills/RESOLVER.md
+                  - text: (or your OpenClaw's
+                  - code [ref=e887]: AGENTS.md
+                  - text: — both filenames are supported as of v0.19). The resolver tells your agent which skill to read for any task. v0.25.1 added 9 research-flavored skills (
+                  - code [ref=e888]: book-mirror
+                  - text: flagship plus 8 pairings); see the new "Research and synthesis" section below.
+                - paragraph [ref=e889]:
+                  - link "Skill files are code." [ref=e890] [cursor=pointer]:
+                    - /url: https://x.com/garrytan/status/2042925773300908103
+                  - text: "They're the most powerful way to get knowledge work done. A skill file is a fat markdown document that encodes an entire workflow: when to fire, what to check, how to chain with other skills, what quality bar to enforce. The agent reads the skill and executes it. Skills can also call deterministic TypeScript code bundled in GBrain (search, import, embed, sync) for the parts that shouldn't be left to LLM judgment."
+                  - link "Thin harness, fat skills" [ref=e891] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/ethos/THIN_HARNESS_FAT_SKILLS.md
+                  - text: ": the intelligence lives in the skills, not the runtime."
+                - generic [ref=e892]:
+                  - heading "Always-on" [level=3] [ref=e893]
+                  - 'link "Permalink: Always-on" [ref=e894] [cursor=pointer]':
+                    - /url: "#always-on"
+                    - img [ref=e895]
+                - table [ref=e898]:
+                  - rowgroup [ref=e899]:
+                    - row "Skill What it does" [ref=e900]:
+                      - columnheader "Skill" [ref=e901]
+                      - columnheader "What it does" [ref=e902]
+                  - rowgroup [ref=e903]:
+                    - row "signal-detector Fires on every message. Spawns a cheap model in parallel to capture original thinking and entity mentions. The brain compounds on autopilot." [ref=e904]:
+                      - cell "signal-detector" [ref=e905]:
+                        - strong [ref=e906]: signal-detector
+                      - cell "Fires on every message. Spawns a cheap model in parallel to capture original thinking and entity mentions. The brain compounds on autopilot." [ref=e907]
+                    - row "brain-ops Brain-first lookup before any external API. The read-enrich-write loop that makes every response smarter." [ref=e908]:
+                      - cell "brain-ops" [ref=e909]:
+                        - strong [ref=e910]: brain-ops
+                      - cell "Brain-first lookup before any external API. The read-enrich-write loop that makes every response smarter." [ref=e911]
+                - generic [ref=e912]:
+                  - heading "Content ingestion" [level=3] [ref=e913]
+                  - 'link "Permalink: Content ingestion" [ref=e914] [cursor=pointer]':
+                    - /url: "#content-ingestion"
+                    - img [ref=e915]
+                - table [ref=e918]:
+                  - rowgroup [ref=e919]:
+                    - row "Skill What it does" [ref=e920]:
+                      - columnheader "Skill" [ref=e921]
+                      - columnheader "What it does" [ref=e922]
+                  - rowgroup [ref=e923]:
+                    - row "ingest Thin router. Detects input type and delegates to the right ingestion skill." [ref=e924]:
+                      - cell "ingest" [ref=e925]:
+                        - strong [ref=e926]: ingest
+                      - cell "Thin router. Detects input type and delegates to the right ingestion skill." [ref=e927]
+                    - row "idea-ingest Links, articles, tweets become brain pages with analysis, author people pages, and cross-linking." [ref=e928]:
+                      - cell "idea-ingest" [ref=e929]:
+                        - strong [ref=e930]: idea-ingest
+                      - cell "Links, articles, tweets become brain pages with analysis, author people pages, and cross-linking." [ref=e931]
+                    - row "media-ingest Video, audio, PDF, books, screenshots, GitHub repos. Transcripts, entity extraction, backlink propagation." [ref=e932]:
+                      - cell "media-ingest" [ref=e933]:
+                        - strong [ref=e934]: media-ingest
+                      - cell "Video, audio, PDF, books, screenshots, GitHub repos. Transcripts, entity extraction, backlink propagation." [ref=e935]
+                    - row "meeting-ingestion Transcripts become brain pages. Every attendee gets enriched. Every company gets a timeline entry." [ref=e936]:
+                      - cell "meeting-ingestion" [ref=e937]:
+                        - strong [ref=e938]: meeting-ingestion
+                      - cell "Transcripts become brain pages. Every attendee gets enriched. Every company gets a timeline entry." [ref=e939]
+                    - row "voice-note-ingest Voice notes captured verbatim — exact phrasing preserved, never paraphrased. Routes to originals/concepts/people/companies/ideas/personal/voice-notes based on content." [ref=e940]:
+                      - cell "voice-note-ingest" [ref=e941]:
+                        - strong [ref=e942]: voice-note-ingest
+                      - cell "Voice notes captured verbatim — exact phrasing preserved, never paraphrased. Routes to originals/concepts/people/companies/ideas/personal/voice-notes based on content." [ref=e943]
+                    - row "article-enrichment Raw article dumps become structured pages with executive summary, verbatim quotes, key insights, and why-it-matters." [ref=e944]:
+                      - cell "article-enrichment" [ref=e945]:
+                        - strong [ref=e946]: article-enrichment
+                      - cell "Raw article dumps become structured pages with executive summary, verbatim quotes, key insights, and why-it-matters." [ref=e947]
+                - generic [ref=e948]:
+                  - heading "Research and synthesis (v0.25.1)" [level=3] [ref=e949]
+                  - 'link "Permalink: Research and synthesis (v0.25.1)" [ref=e950] [cursor=pointer]':
+                    - /url: "#research-and-synthesis-v0251"
+                    - img [ref=e951]
+                - table [ref=e954]:
+                  - rowgroup [ref=e955]:
+                    - row "Skill What it does" [ref=e956]:
+                      - columnheader "Skill" [ref=e957]
+                      - columnheader "What it does" [ref=e958]
+                  - rowgroup [ref=e959]:
+                    - row "book-mirror Flagship. Hand the agent a book, get a personalized two-column chapter-by-chapter analysis. Left column preserves the chapter's actual content; right column maps every idea to your life using your words from the brain. ~$6 for a 20-chapter book at Opus. Pairs with gbrain book-mirror CLI for the trusted runtime." [ref=e960]:
+                      - cell "book-mirror" [ref=e961]:
+                        - strong [ref=e962]: book-mirror
+                      - cell "Flagship. Hand the agent a book, get a personalized two-column chapter-by-chapter analysis. Left column preserves the chapter's actual content; right column maps every idea to your life using your words from the brain. ~$6 for a 20-chapter book at Opus. Pairs with gbrain book-mirror CLI for the trusted runtime." [ref=e963]:
+                        - text: Flagship. Hand the agent a book, get a personalized two-column chapter-by-chapter analysis. Left column preserves the chapter's actual content; right column maps every idea to your life using your words from the brain. ~$6 for a 20-chapter book at Opus. Pairs with
+                        - code [ref=e964]: gbrain book-mirror
+                        - text: CLI for the trusted runtime.
+                    - 'row "strategic-reading Read a book / article / case study through ONE specific problem-lens. Output: applied playbook with do / avoid / watch-for and short / medium / long-term recommendations." [ref=e965]':
+                      - cell "strategic-reading" [ref=e966]:
+                        - strong [ref=e967]: strategic-reading
+                      - 'cell "Read a book / article / case study through ONE specific problem-lens. Output: applied playbook with do / avoid / watch-for and short / medium / long-term recommendations." [ref=e968]'
+                    - row "concept-synthesis Deduplicate thousands of concept stubs into a tiered intellectual map (T1 Canon to T4 Riff). Trace how ideas evolved across years of notes." [ref=e969]:
+                      - cell "concept-synthesis" [ref=e970]:
+                        - strong [ref=e971]: concept-synthesis
+                      - cell "Deduplicate thousands of concept stubs into a tiered intellectual map (T1 Canon to T4 Riff). Trace how ideas evolved across years of notes." [ref=e972]
+                    - 'row "perplexity-research Brain-augmented web research. Sends brain context to Perplexity so the search focuses on what''s NEW vs already-known. Output: Executive Summary + Key New Developments + Confirming Signals + Contradictions or Updates + Recommended Brain Updates + Citations." [ref=e973]':
+                      - cell "perplexity-research" [ref=e974]:
+                        - strong [ref=e975]: perplexity-research
+                      - 'cell "Brain-augmented web research. Sends brain context to Perplexity so the search focuses on what''s NEW vs already-known. Output: Executive Summary + Key New Developments + Confirming Signals + Contradictions or Updates + Recommended Brain Updates + Citations." [ref=e976]'
+                    - 'row "archive-crawler Universal archivist for personal file archives (Dropbox / Backblaze / Gmail-takeout / hard-drive dumps). REFUSES to run unless archive-crawler.scan_paths: is set in gbrain.yml. Safe-by-default safety fence." [ref=e977]':
+                      - cell "archive-crawler" [ref=e978]:
+                        - strong [ref=e979]: archive-crawler
+                      - 'cell "Universal archivist for personal file archives (Dropbox / Backblaze / Gmail-takeout / hard-drive dumps). REFUSES to run unless archive-crawler.scan_paths: is set in gbrain.yml. Safe-by-default safety fence." [ref=e980]':
+                        - text: Universal archivist for personal file archives (Dropbox / Backblaze / Gmail-takeout / hard-drive dumps). REFUSES to run unless
+                        - code [ref=e981]: "archive-crawler.scan_paths:"
+                        - text: is set in
+                        - code [ref=e982]: gbrain.yml
+                        - text: . Safe-by-default safety fence.
+                    - row "academic-verify Trace a research claim through publication → methodology → raw data → independent replication. Routes through perplexity-research; produces a verdict (verified / partial / unverifiable / misattributed / retracted)." [ref=e983]:
+                      - cell "academic-verify" [ref=e984]:
+                        - strong [ref=e985]: academic-verify
+                      - cell "Trace a research claim through publication → methodology → raw data → independent replication. Routes through perplexity-research; produces a verdict (verified / partial / unverifiable / misattributed / retracted)." [ref=e986]
+                    - row "brain-pdf Render any brain page to publication-quality PDF via the gstack make-pdf binary. Strips frontmatter, sanitizes emoji, applies running headers." [ref=e987]:
+                      - cell "brain-pdf" [ref=e988]:
+                        - strong [ref=e989]: brain-pdf
+                      - cell "Render any brain page to publication-quality PDF via the gstack make-pdf binary. Strips frontmatter, sanitizes emoji, applies running headers." [ref=e990]:
+                        - text: Render any brain page to publication-quality PDF via the gstack
+                        - code [ref=e991]: make-pdf
+                        - text: binary. Strips frontmatter, sanitizes emoji, applies running headers.
+                - generic [ref=e992]:
+                  - heading "Brain operations" [level=3] [ref=e993]
+                  - 'link "Permalink: Brain operations" [ref=e994] [cursor=pointer]':
+                    - /url: "#brain-operations"
+                    - img [ref=e995]
+                - table [ref=e998]:
+                  - rowgroup [ref=e999]:
+                    - row "Skill What it does" [ref=e1000]:
+                      - columnheader "Skill" [ref=e1001]
+                      - columnheader "What it does" [ref=e1002]
+                  - rowgroup [ref=e1003]:
+                    - row "enrich Tiered enrichment (Tier 1/2/3). Creates and updates person/company pages with compiled truth and timelines." [ref=e1004]:
+                      - cell "enrich" [ref=e1005]:
+                        - strong [ref=e1006]: enrich
+                      - cell "Tiered enrichment (Tier 1/2/3). Creates and updates person/company pages with compiled truth and timelines." [ref=e1007]
+                    - row "query 3-layer search with synthesis and citations. Says \"the brain doesn't have info on X\" instead of hallucinating." [ref=e1008]:
+                      - cell "query" [ref=e1009]:
+                        - strong [ref=e1010]: query
+                      - cell "3-layer search with synthesis and citations. Says \"the brain doesn't have info on X\" instead of hallucinating." [ref=e1011]
+                    - 'row "maintain Periodic health: stale pages, orphans, dead links, citation audit, back-link enforcement, tag consistency. v0.23 adds the dream cycle''s synthesize + patterns phases ... overnight conversation transcripts become reflections, originals, and 25-year patterns." [ref=e1012]':
+                      - cell "maintain" [ref=e1013]:
+                        - strong [ref=e1014]: maintain
+                      - 'cell "Periodic health: stale pages, orphans, dead links, citation audit, back-link enforcement, tag consistency. v0.23 adds the dream cycle''s synthesize + patterns phases ... overnight conversation transcripts become reflections, originals, and 25-year patterns." [ref=e1015]'
+                    - row "citation-fixer Scans pages for missing or malformed citations. Fixes format to match the standard." [ref=e1016]:
+                      - cell "citation-fixer" [ref=e1017]:
+                        - strong [ref=e1018]: citation-fixer
+                      - cell "Scans pages for missing or malformed citations. Fixes format to match the standard." [ref=e1019]
+                    - 'row "repo-architecture Where new brain files go. Decision protocol: primary subject determines directory, not format." [ref=e1020]':
+                      - cell "repo-architecture" [ref=e1021]:
+                        - strong [ref=e1022]: repo-architecture
+                      - 'cell "Where new brain files go. Decision protocol: primary subject determines directory, not format." [ref=e1023]'
+                    - row "publish Share brain pages as password-protected HTML. Zero LLM calls." [ref=e1024]:
+                      - cell "publish" [ref=e1025]:
+                        - strong [ref=e1026]: publish
+                      - cell "Share brain pages as password-protected HTML. Zero LLM calls." [ref=e1027]
+                    - row "data-research Structured data research with parameterized YAML recipes. Extract investor updates, expenses, company metrics from email." [ref=e1028]:
+                      - cell "data-research" [ref=e1029]:
+                        - strong [ref=e1030]: data-research
+                      - cell "Structured data research with parameterized YAML recipes. Extract investor updates, expenses, company metrics from email." [ref=e1031]
+                - generic [ref=e1032]:
+                  - heading "Operational" [level=3] [ref=e1033]
+                  - 'link "Permalink: Operational" [ref=e1034] [cursor=pointer]':
+                    - /url: "#operational"
+                    - img [ref=e1035]
+                - table [ref=e1038]:
+                  - rowgroup [ref=e1039]:
+                    - row "Skill What it does" [ref=e1040]:
+                      - columnheader "Skill" [ref=e1041]
+                      - columnheader "What it does" [ref=e1042]
+                  - rowgroup [ref=e1043]:
+                    - row "daily-task-manager Task lifecycle with priority levels (P0-P3). Stored as searchable brain pages." [ref=e1044]:
+                      - cell "daily-task-manager" [ref=e1045]:
+                        - strong [ref=e1046]: daily-task-manager
+                      - cell "Task lifecycle with priority levels (P0-P3). Stored as searchable brain pages." [ref=e1047]
+                    - 'row "daily-task-prep Morning prep: calendar lookahead with brain context per attendee, open threads, task review." [ref=e1048]':
+                      - cell "daily-task-prep" [ref=e1049]:
+                        - strong [ref=e1050]: daily-task-prep
+                      - 'cell "Morning prep: calendar lookahead with brain context per attendee, open threads, task review." [ref=e1051]'
+                    - row "cron-scheduler Schedule staggering (5-min offsets), quiet hours (timezone-aware with wake-up override), idempotency." [ref=e1052]:
+                      - cell "cron-scheduler" [ref=e1053]:
+                        - strong [ref=e1054]: cron-scheduler
+                      - cell "Schedule staggering (5-min offsets), quiet hours (timezone-aware with wake-up override), idempotency." [ref=e1055]
+                    - row "reports Timestamped reports with keyword routing. \"What's the latest briefing?\" finds it instantly." [ref=e1056]:
+                      - cell "reports" [ref=e1057]:
+                        - strong [ref=e1058]: reports
+                      - cell "Timestamped reports with keyword routing. \"What's the latest briefing?\" finds it instantly." [ref=e1059]
+                    - 'row "cross-modal-review Quality gate via second model. Refusal routing: if one model refuses, silently switch." [ref=e1060]':
+                      - cell "cross-modal-review" [ref=e1061]:
+                        - strong [ref=e1062]: cross-modal-review
+                      - 'cell "Quality gate via second model. Refusal routing: if one model refuses, silently switch." [ref=e1063]'
+                    - row "webhook-transforms External events (SMS, meetings, social mentions) converted into brain pages with entity extraction." [ref=e1064]:
+                      - cell "webhook-transforms" [ref=e1065]:
+                        - strong [ref=e1066]: webhook-transforms
+                      - cell "External events (SMS, meetings, social mentions) converted into brain pages with entity extraction." [ref=e1067]
+                    - row "testing Validates every skill has SKILL.md with frontmatter, manifest coverage, resolver coverage." [ref=e1068]:
+                      - cell "testing" [ref=e1069]:
+                        - strong [ref=e1070]: testing
+                      - cell "Validates every skill has SKILL.md with frontmatter, manifest coverage, resolver coverage." [ref=e1071]
+                    - row "skill-creator Create new skills following the conformance standard. MECE check against existing skills." [ref=e1072]:
+                      - cell "skill-creator" [ref=e1073]:
+                        - strong [ref=e1074]: skill-creator
+                      - cell "Create new skills following the conformance standard. MECE check against existing skills." [ref=e1075]
+                    - 'row "skillify The \"skillify it!\" meta-skill. Orchestrates the 10-step loop so failures become durable skills: scaffold the stubs via gbrain skillify scaffold, write the real logic, gate with gbrain skillify check + gbrain check-resolvable." [ref=e1076]':
+                      - cell "skillify" [ref=e1077]:
+                        - strong [ref=e1078]: skillify
+                      - 'cell "The \"skillify it!\" meta-skill. Orchestrates the 10-step loop so failures become durable skills: scaffold the stubs via gbrain skillify scaffold, write the real logic, gate with gbrain skillify check + gbrain check-resolvable." [ref=e1079]':
+                        - text: "The \"skillify it!\" meta-skill. Orchestrates the 10-step loop so failures become durable skills: scaffold the stubs via"
+                        - code [ref=e1080]: gbrain skillify scaffold
+                        - text: ", write the real logic, gate with"
+                        - code [ref=e1081]: gbrain skillify check
+                        - text: +
+                        - code [ref=e1082]: gbrain check-resolvable
+                        - text: .
+                    - row "skillpack-check Agent-readable gbrain health report. Exit code for CI; JSON for debugging. Cron-friendly." [ref=e1083]:
+                      - cell "skillpack-check" [ref=e1084]:
+                        - strong [ref=e1085]: skillpack-check
+                      - cell "Agent-readable gbrain health report. Exit code for CI; JSON for debugging. Cron-friendly." [ref=e1086]
+                    - row "smoke-test 8 post-restart health checks with auto-fix (Bun, CLI, DB, worker, Zod CJS, gateway, API key, brain repo). Drop-in user tests at ~/.gbrain/smoke-tests.d/*.sh." [ref=e1087]:
+                      - cell "smoke-test" [ref=e1088]:
+                        - strong [ref=e1089]: smoke-test
+                      - cell "8 post-restart health checks with auto-fix (Bun, CLI, DB, worker, Zod CJS, gateway, API key, brain repo). Drop-in user tests at ~/.gbrain/smoke-tests.d/*.sh." [ref=e1090]:
+                        - text: 8 post-restart health checks with auto-fix (Bun, CLI, DB, worker, Zod CJS, gateway, API key, brain repo). Drop-in user tests at
+                        - code [ref=e1091]: ~/.gbrain/smoke-tests.d/*.sh
+                        - text: .
+                    - row "minion-orchestrator Background work in one skill. Shell jobs via gbrain jobs submit shell (operator/CLI, MCP blocks protected names) and LLM subagents via gbrain agent run. Parent-child DAGs, child_done inbox, durability across worker restarts." [ref=e1092]:
+                      - cell "minion-orchestrator" [ref=e1093]:
+                        - strong [ref=e1094]: minion-orchestrator
+                      - cell "Background work in one skill. Shell jobs via gbrain jobs submit shell (operator/CLI, MCP blocks protected names) and LLM subagents via gbrain agent run. Parent-child DAGs, child_done inbox, durability across worker restarts." [ref=e1095]:
+                        - text: Background work in one skill. Shell jobs via
+                        - code [ref=e1096]: gbrain jobs submit shell
+                        - text: (operator/CLI, MCP blocks protected names) and LLM subagents via
+                        - code [ref=e1097]: gbrain agent run
+                        - text: . Parent-child DAGs,
+                        - code [ref=e1098]: child_done
+                        - text: inbox, durability across worker restarts.
+                - generic [ref=e1099]:
+                  - heading "Identity and setup" [level=3] [ref=e1100]
+                  - 'link "Permalink: Identity and setup" [ref=e1101] [cursor=pointer]':
+                    - /url: "#identity-and-setup"
+                    - img [ref=e1102]
+                - table [ref=e1105]:
+                  - rowgroup [ref=e1106]:
+                    - row "Skill What it does" [ref=e1107]:
+                      - columnheader "Skill" [ref=e1108]
+                      - columnheader "What it does" [ref=e1109]
+                  - rowgroup [ref=e1110]:
+                    - row "soul-audit 6-phase interview generating SOUL.md (agent identity), USER.md (user profile), ACCESS_POLICY.md (4-tier privacy), HEARTBEAT.md (operational cadence)." [ref=e1111]:
+                      - cell "soul-audit" [ref=e1112]:
+                        - strong [ref=e1113]: soul-audit
+                      - cell "6-phase interview generating SOUL.md (agent identity), USER.md (user profile), ACCESS_POLICY.md (4-tier privacy), HEARTBEAT.md (operational cadence)." [ref=e1114]
+                    - row "setup Auto-provision PGLite or Supabase. First import. GStack detection." [ref=e1115]:
+                      - cell "setup" [ref=e1116]:
+                        - strong [ref=e1117]: setup
+                      - cell "Auto-provision PGLite or Supabase. First import. GStack detection." [ref=e1118]
+                    - row "migrate Universal migration from Obsidian, Notion, Logseq, markdown, CSV, JSON, Roam." [ref=e1119]:
+                      - cell "migrate" [ref=e1120]:
+                        - strong [ref=e1121]: migrate
+                      - cell "Universal migration from Obsidian, Notion, Logseq, markdown, CSV, JSON, Roam." [ref=e1122]
+                    - row "briefing Daily briefing with meeting context, active deals, and citation tracking." [ref=e1123]:
+                      - cell "briefing" [ref=e1124]:
+                        - strong [ref=e1125]: briefing
+                      - cell "Daily briefing with meeting context, active deals, and citation tracking." [ref=e1126]
+                - generic [ref=e1127]:
+                  - heading "Conventions" [level=3] [ref=e1128]
+                  - 'link "Permalink: Conventions" [ref=e1129] [cursor=pointer]':
+                    - /url: "#conventions"
+                    - img [ref=e1130]
+                - paragraph [ref=e1132]:
+                  - text: Cross-cutting rules in
+                  - code [ref=e1133]: skills/conventions/
+                  - text: ":"
+                - list [ref=e1134]:
+                  - listitem [ref=e1135]:
+                    - strong [ref=e1136]: quality.md
+                    - text: ... citations, back-links, notability gate, source attribution
+                  - listitem [ref=e1137]:
+                    - strong [ref=e1138]: brain-first.md
+                    - text: ... 5-step lookup before any external API call
+                  - listitem [ref=e1139]:
+                    - strong [ref=e1140]: model-routing.md
+                    - text: ... which model for which task
+                  - listitem [ref=e1141]:
+                    - strong [ref=e1142]: test-before-bulk.md
+                    - text: ... test 3-5 items before any batch operation
+                  - listitem [ref=e1143]:
+                    - strong [ref=e1144]: cross-modal.yaml
+                    - text: ... review pairs and refusal routing chain
+                - generic [ref=e1145]:
+                  - heading "How It Works" [level=2] [ref=e1146]
+                  - 'link "Permalink: How It Works" [ref=e1147] [cursor=pointer]':
+                    - /url: "#how-it-works"
+                    - img [ref=e1148]
+                - generic [ref=e1150]:
+                  - code [ref=e1152]: "Signal arrives (meeting, email, tweet, link) -> Signal detector captures ideas + entities (parallel, never blocks) -> Brain-ops: check the brain first (gbrain search, gbrain get) -> Respond with full context -> Write: update brain pages with new information + citations -> Auto-link: typed relationships extracted on every write (zero LLM calls) -> Sync: gbrain indexes changes for next query"
+                  - button "Copy" [ref=e1154] [cursor=pointer]:
+                    - img [ref=e1155]
+                - paragraph [ref=e1158]: Every cycle adds knowledge. The agent enriches a person page after a meeting. Next time that person comes up, the agent already has context. The difference compounds daily.
+                - paragraph [ref=e1159]:
+                  - text: "The system gets smarter on its own. Entity enrichment auto-escalates: a person mentioned once gets a stub page (Tier 3). After 3 mentions across different sources, they get web + social enrichment (Tier 2). After a meeting or 8+ mentions, full pipeline (Tier 1). The brain learns who matters without being told. Deterministic classifiers improve over time via a fail-improve loop that logs every LLM fallback and generates better regex patterns from the failures."
+                  - code [ref=e1160]: gbrain doctor
+                  - text: "shows the trajectory: \"intent classifier: 87% deterministic, up from 40% in week 1.\""
+                - blockquote [ref=e1161]:
+                  - paragraph [ref=e1162]: "\"Prep me for my meeting with Jordan in 30 minutes\" ... pulls dossier, shared history, recent activity, open threads"
+                - blockquote [ref=e1163]:
+                  - paragraph [ref=e1164]: "\"What have I said about the relationship between shame and founder performance?\" ... searches YOUR thinking, not the internet"
+                - generic [ref=e1165]:
+                  - 'heading "Minions: your sub-agents won''t drop work anymore" [level=2] [ref=e1166]'
+                  - 'link "Permalink: Minions: your sub-agents won''t drop work anymore" [ref=e1167] [cursor=pointer]':
+                    - /url: "#minions-your-sub-agents-wont-drop-work-anymore"
+                    - img [ref=e1168]
+                - paragraph [ref=e1170]:
+                  - text: A durable, Postgres-native job queue built into the brain. Every long-running agent task is now a job that survives gateway restarts, streams progress, gets paused / resumed / steered mid-flight, and shows up in
+                  - code [ref=e1171]: gbrain jobs list
+                  - text: . Zero infra beyond your existing brain.
+                - generic [ref=e1172]:
+                  - heading "The production numbers that matter" [level=3] [ref=e1173]
+                  - 'link "Permalink: The production numbers that matter" [ref=e1174] [cursor=pointer]':
+                    - /url: "#the-production-numbers-that-matter"
+                    - img [ref=e1175]
+                - paragraph [ref=e1177]: "Here's my personal OpenClaw deployment: one Render container. Supabase Postgres holding a 45,000-page brain. 19 cron jobs firing on schedule. Real gateway load from real daily work. The task: pull a month of my social posts from an external API and ingest them end-to-end into the brain as a structured page."
+                - table [ref=e1179]:
+                  - rowgroup [ref=e1180]:
+                    - row "Minions sessions_spawn" [ref=e1181]:
+                      - columnheader [ref=e1182]
+                      - columnheader "Minions" [ref=e1183]
+                      - columnheader "sessions_spawn" [ref=e1184]:
+                        - code [ref=e1185]: sessions_spawn
+                  - rowgroup [ref=e1186]:
+                    - row "Wall time 753ms >10,000ms (gateway timeout)" [ref=e1187]:
+                      - cell "Wall time" [ref=e1188]
+                      - cell "753ms" [ref=e1189]:
+                        - strong [ref=e1190]: 753ms
+                      - cell ">10,000ms (gateway timeout)" [ref=e1191]:
+                        - strong [ref=e1192]: ">10,000ms"
+                        - text: (gateway timeout)
+                    - row "Token cost $0.00 ~$0.03 per run" [ref=e1193]:
+                      - cell "Token cost" [ref=e1194]
+                      - cell "$0.00" [ref=e1195]:
+                        - strong [ref=e1196]: $0.00
+                      - cell "~$0.03 per run" [ref=e1197]
+                    - row "Success rate 100% 0% (couldn't even spawn)" [ref=e1198]:
+                      - cell "Success rate" [ref=e1199]
+                      - cell "100%" [ref=e1200]:
+                        - strong [ref=e1201]: 100%
+                      - cell "0% (couldn't even spawn)" [ref=e1202]:
+                        - strong [ref=e1203]: 0%
+                        - text: (couldn't even spawn)
+                    - row "Memory/job ~2 MB ~80 MB" [ref=e1204]:
+                      - cell "Memory/job" [ref=e1205]
+                      - cell "~2 MB" [ref=e1206]
+                      - cell "~80 MB" [ref=e1207]
+                - paragraph [ref=e1208]:
+                  - text: Under that 19-cron load, sub-agent spawn couldn't clear the 10-second gateway wall. Minions landed it in under a second for zero tokens.
+                  - strong [ref=e1209]: "Scaling:"
+                  - text: "19,240 posts across 36 months, single bash loop, ~15 min total, $0.00. Sub-agents: ~9 min best case, ~$1.08 in tokens, ~40% spawn failure."
+                  - strong [ref=e1210]: "Lab:"
+                  - text: durability ∞ (SIGKILL mid-flight, 10/10 rescued), throughput ~10× faster, fan-out ~21× with no failure wall, memory ~400× less.
+                - paragraph [ref=e1211]:
+                  - text: Full benchmarks live in
+                  - link "gbrain-evals" [ref=e1212] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain-evals/tree/main/docs/benchmarks
+                  - text: .
+                - generic [ref=e1213]:
+                  - heading "The routing rule" [level=3] [ref=e1214]
+                  - 'link "Permalink: The routing rule" [ref=e1215] [cursor=pointer]':
+                    - /url: "#the-routing-rule"
+                    - img [ref=e1216]
+                - blockquote [ref=e1218]:
+                  - paragraph [ref=e1219]:
+                    - strong [ref=e1220]: Deterministic
+                    - text: (same input → same steps → same output) →
+                    - strong [ref=e1221]: Minions
+                    - strong [ref=e1222]: Judgment
+                    - text: (input requires assessment or decision) →
+                    - strong [ref=e1223]: Sub-agents
+                - paragraph [ref=e1224]:
+                  - text: Pull posts, parse JSON, write a brain page, run a sync — deterministic. $0 tokens, survives restart, millisecond runtime. Triage the inbox, assess meeting priority, decide if a cold email deserves a reply — judgment. What sub-agents are actually good at.
+                  - code [ref=e1225]: "minion_mode: pain_triggered"
+                  - text: (the default) automates the routing.
+                - generic [ref=e1226]:
+                  - heading "What's fixed" [level=3] [ref=e1227]
+                  - 'link "Permalink: What''s fixed" [ref=e1228] [cursor=pointer]':
+                    - /url: "#whats-fixed"
+                    - img [ref=e1229]
+                - paragraph [ref=e1231]:
+                  - text: "The six daily pains — spawn storms, agents that stop responding, forgotten dispatches, gateway crashes mid-run, runaway grandchildren, debugging soup — all belonged to the \"deterministic work through a reasoning model\" mistake. Minions fixes them by not making that mistake:"
+                  - code [ref=e1232]: max_children
+                  - text: cap,
+                  - code [ref=e1233]: timeout_ms
+                  - text: + AbortSignal,
+                  - code [ref=e1234]: child_done
+                  - text: inbox, full
+                  - code [ref=e1235]: parent_job_id
+                  - text: /
+                  - code [ref=e1236]: depth
+                  - text: /transcript per job, Postgres durability with stall detection, cascade cancel via recursive CTE. Plus idempotency keys, attachment validation,
+                  - code [ref=e1237]: removeOnComplete
+                  - text: ", and"
+                  - code [ref=e1238]: gbrain jobs smoke
+                  - text: that proves the install in half a second.
+                - generic [ref=e1239]:
+                  - generic [ref=e1240]:
+                    - text: gbrain jobs smoke
+                    - generic [ref=e1241]: "# verify install"
+                    - text: gbrain jobs submit sync --params
+                    - generic [ref=e1242]: "'{}'"
+                    - generic [ref=e1243]: "# fire a background job"
+                    - text: gbrain jobs stats
+                    - generic [ref=e1244]: "# health dashboard"
+                    - text: gbrain jobs supervisor --concurrency 4
+                    - generic [ref=e1245]: "# canonical: auto-restarting worker (Postgres only)"
+                    - text: gbrain jobs work --concurrency 4
+                    - generic [ref=e1246]: "# raw worker (no crash recovery — prefer `supervisor`)"
+                  - button "Copy" [ref=e1248] [cursor=pointer]:
+                    - img [ref=e1249]
+                - paragraph [ref=e1252]:
+                  - code [ref=e1253]: gbrain jobs supervisor
+                  - text: keeps the worker alive across crashes with exponential backoff, atomic PID locking, structured audit events at
+                  - code [ref=e1254]: ~/.gbrain/audit/supervisor-*.jsonl
+                  - text: ", and a"
+                  - code [ref=e1255]: start --detach
+                  - text: /
+                  - code [ref=e1256]: status --json
+                  - text: /
+                  - code [ref=e1257]: stop
+                  - text: subcommand surface for agents. In containers it runs as PID 1; on systemd hosts it's the child of
+                  - code [ref=e1258]: gbrain-worker.service
+                  - text: ". Full deployment guide:"
+                  - link "docs/guides/minions-deployment.md" [ref=e1259] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/guides/minions-deployment.md
+                    - code [ref=e1260]: docs/guides/minions-deployment.md
+                  - text: .
+                - paragraph [ref=e1261]:
+                  - text: Read
+                  - link "skills/minion-orchestrator/SKILL.md" [ref=e1262] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/skills/minion-orchestrator/SKILL.md
+                    - code [ref=e1263]: skills/minion-orchestrator/SKILL.md
+                  - text: for parent-child DAGs, fan-in collection, steering via inbox.
+                - paragraph [ref=e1264]:
+                  - strong [ref=e1265]: Minions is not incrementally better than sub-agents for background work. It's categorically different.
+                  - text: 753ms vs gateway timeout. $0 vs tokens. 100% vs couldn't-spawn. If your agent does deterministic work on a schedule, it runs on Minions now.
+                - generic [ref=e1266]:
+                  - heading "Health check and self-heal" [level=3] [ref=e1267]
+                  - 'link "Permalink: Health check and self-heal" [ref=e1268] [cursor=pointer]':
+                    - /url: "#health-check-and-self-heal"
+                    - img [ref=e1269]
+                - paragraph [ref=e1271]:
+                  - text: Minions is canonical as of v0.11.1 — every
+                  - code [ref=e1272]: gbrain upgrade
+                  - text: "runs the migration automatically (schema → smoke → prefs → host rewrites → env-aware autopilot install). If you ever want to verify manually or wire a cron into your morning briefing:"
+                - generic [ref=e1273]:
+                  - generic [ref=e1274]:
+                    - text: gbrain doctor
+                    - generic [ref=e1275]: "# half-migrated state? prints loud banner + exits non-zero"
+                    - text: gbrain skillpack-check --quiet
+                    - generic [ref=e1276]: "# exit 0/1/2 for pipeline gating"
+                    - text: gbrain skillpack-check | jq
+                    - generic [ref=e1277]: "# full JSON: {healthy, summary, actions[], doctor, migrations}"
+                  - button "Copy" [ref=e1279] [cursor=pointer]:
+                    - img [ref=e1280]
+                - paragraph [ref=e1283]:
+                  - text: If anything's off,
+                  - code [ref=e1284]: actions[]
+                  - text: "tells you the exact command to run. For deeper troubleshooting:"
+                  - link "docs/guides/minions-fix.md" [ref=e1285] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/guides/minions-fix.md
+                    - code [ref=e1286]: docs/guides/minions-fix.md
+                  - text: .
+                - paragraph [ref=e1287]:
+                  - text: "Moving gateway crons to Minions (deterministic scripts, zero LLM tokens per fire):"
+                  - link "docs/guides/minions-shell-jobs.md" [ref=e1288] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/guides/minions-shell-jobs.md
+                    - code [ref=e1289]: docs/guides/minions-shell-jobs.md
+                  - text: .
+                - generic [ref=e1290]:
+                  - 'heading "Durable agents: gbrain agent (v0.15)" [level=2] [ref=e1291]':
+                    - text: "Durable agents:"
+                    - code [ref=e1292]: gbrain agent
+                    - text: (v0.15)
+                  - 'link "Permalink: Durable agents: gbrain agent (v0.15)" [ref=e1293] [cursor=pointer]':
+                    - /url: "#durable-agents-gbrain-agent-v015"
+                    - img [ref=e1294]
+                - paragraph [ref=e1296]:
+                  - text: Your subagent runs survive crashes now. OpenClaw died mid-run? The worker re-claims on restart and replays from the last committed turn. Fan-out across 50 shards, one shard crashes — the aggregator still claims after every child reaches a terminal state and writes a mixed-outcome summary. Tool calls persist as a two-phase ledger (
+                  - code [ref=e1297]: pending
+                  - text: →
+                  - code [ref=e1298]: complete | failed
+                  - text: ) so replay is safe by construction, not by hope.
+                - generic [ref=e1299]:
+                  - generic [ref=e1300]:
+                    - generic [ref=e1301]: "# Submit a single-subagent run"
+                    - text: gbrain agent run
+                    - generic [ref=e1302]: "\"summarize my last 10 journal pages\""
+                    - generic [ref=e1303]: "# Fan out N prompts across N subagent children + 1 aggregator"
+                    - text: gbrain agent run
+                    - generic [ref=e1304]: "\"analyze every page\""
+                    - text: \ --fanout-manifest manifests/pages.json \ --subagent-def analyzer
+                    - generic [ref=e1305]: "# Tail a running job (heartbeat per turn + full transcript on completion)"
+                    - text: gbrain agent logs 1247 --follow --since 5m
+                  - button "Copy" [ref=e1307] [cursor=pointer]:
+                    - img [ref=e1308]
+                - paragraph [ref=e1311]:
+                  - text: "Durability is the point: every Anthropic turn commits to"
+                  - code [ref=e1312]: subagent_messages
+                  - text: ", every tool call to"
+                  - code [ref=e1313]: subagent_tool_executions
+                  - text: . Worker kills, OpenClaw crashes, timeouts — all resumable. Host repos (your OpenClaw, etc.) ship their own subagent definitions via
+                  - code [ref=e1314]: GBRAIN_PLUGIN_PATH
+                  - text: + a
+                  - code [ref=e1315]: gbrain.plugin.json
+                  - text: "manifest: see"
+                  - link "docs/guides/plugin-authors.md" [ref=e1316] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/guides/plugin-authors.md
+                    - code [ref=e1317]: docs/guides/plugin-authors.md
+                  - text: . Requires
+                  - code [ref=e1318]: ANTHROPIC_API_KEY
+                  - text: on the worker.
+                - generic [ref=e1319]:
+                  - 'heading "Skillify: say \"skillify it!\" and the bug becomes structurally impossible to repeat" [level=2] [ref=e1320]'
+                  - 'link "Permalink: Skillify: say \"skillify it!\" and the bug becomes structurally impossible to repeat" [ref=e1321] [cursor=pointer]':
+                    - /url: "#skillify-say-skillify-it-and-the-bug-becomes-structurally-impossible-to-repeat"
+                    - img [ref=e1322]
+                - paragraph [ref=e1324]: "Your OpenClaw hit a new failure. You fix it once in conversation. You say \"skillify it!\" And now the fix is permanent: a SKILL.md with triggers, a deterministic script with tests, a routing fixture the agent re-evaluates daily, a filing audit that keeps the output from drifting. Ten items. Every one required. The bug can't recur."
+                - paragraph [ref=e1325]: Hermes and similar agent frameworks auto-create skills as a background behavior. Fine until you don't know what the agent shipped. Checklists decay. Tests drift. Resolver entries get stale. Six months later it's an opaque pile nobody has read, nobody has tested, and nobody is sure still works. GBrain ships the same capability except the human stays in the loop and every step is a command you can run.
+                - generic [ref=e1326]:
+                  - heading "The four verbs you need (v0.19)" [level=3] [ref=e1327]
+                  - 'link "Permalink: The four verbs you need (v0.19)" [ref=e1328] [cursor=pointer]':
+                    - /url: "#the-four-verbs-you-need-v019"
+                    - img [ref=e1329]
+                - generic [ref=e1331]:
+                  - generic [ref=e1332]:
+                    - generic [ref=e1333]: "# 1. Scaffold all 5 stub files for a new skill in one shot."
+                    - text: gbrain skillify scaffold webhook-verify \ --description
+                    - generic [ref=e1334]: "\"verify ngrok webhooks\""
+                    - text: \ --triggers
+                    - generic [ref=e1335]: "\"verify the webhook,check tunnel\""
+                    - text: \ --writes-pages --writes-to people/,companies/
+                    - generic [ref=e1336]: "# 2. Replace the SKILLIFY_STUB sentinels with real logic + real tests."
+                    - text: $EDITOR skills/webhook-verify/scripts/webhook-verify.mjs $EDITOR test/webhook-verify.test.ts
+                    - generic [ref=e1337]: "# 3. Run the 10-item audit: SKILL.md exists, script exists, unit + E2E tests,"
+                    - generic [ref=e1338]: "# LLM evals, resolver entry, trigger eval, check-resolvable gate, brain filing."
+                    - text: gbrain skillify check skills/webhook-verify/scripts/webhook-verify.mjs
+                    - generic [ref=e1339]: "# 4. Verify the whole tree: reachability, MECE overlap, DRY, routing gaps,"
+                    - generic [ref=e1340]: "# filing audit, SKILLIFY_STUB sentinels (fails if any skill still has one)."
+                    - text: gbrain check-resolvable
+                    - generic [ref=e1341]: "# warnings advisory, errors block"
+                    - text: gbrain check-resolvable --strict
+                    - generic [ref=e1342]: "# warnings block too (CI opt-in)"
+                  - button "Copy" [ref=e1344] [cursor=pointer]:
+                    - img [ref=e1345]
+                - paragraph [ref=e1348]:
+                  - text: Idempotent re-runs.
+                  - code [ref=e1349]: "--force"
+                  - text: regenerates stub files but NEVER duplicates a resolver row. Scaffold completes in under 2 seconds. The real work (your rule, your script, your tests) is what you spend time on. Everything else is boilerplate the CLI writes for you.
+                - generic [ref=e1350]:
+                  - heading "gbrain routing-eval — catch the routing gaps your users actually hit" [level=3] [ref=e1351]:
+                    - code [ref=e1352]: gbrain routing-eval
+                    - text: — catch the routing gaps your users actually hit
+                  - 'link "Permalink: gbrain routing-eval — catch the routing gaps your users actually hit" [ref=e1353] [cursor=pointer]':
+                    - /url: "#gbrain-routing-eval--catch-the-routing-gaps-your-users-actually-hit"
+                    - img [ref=e1354]
+                - paragraph [ref=e1356]:
+                  - text: Drop a
+                  - code [ref=e1357]: routing-eval.jsonl
+                  - text: fixture next to any skill. Each line is
+                  - code [ref=e1358]: "{intent, expected_skill, ambiguous_with?}"
+                  - text: .
+                  - code [ref=e1359]: gbrain check-resolvable
+                  - text: runs the structural layer by default;
+                  - code [ref=e1360]: gbrain routing-eval
+                  - text: runs the same structural layer as a dedicated CI verb. The
+                  - code [ref=e1361]: "--llm"
+                  - text: flag is accepted as a placeholder for a future LLM tie-break layer; in this release it emits a stderr notice and runs structural only. False positives (wrong skill matched), missed routes (no skill matched), and tautological fixtures (intent copies trigger verbatim) all surface as specific advisories with the exact file:line to fix.
+                - generic [ref=e1362]:
+                  - heading "Works on your OpenClaw, not just gbrain's repo" [level=3] [ref=e1363]
+                  - 'link "Permalink: Works on your OpenClaw, not just gbrain''s repo" [ref=e1364] [cursor=pointer]':
+                    - /url: "#works-on-your-openclaw-not-just-gbrains-repo"
+                    - img [ref=e1365]
+                - paragraph [ref=e1367]:
+                  - text: v0.19 teaches
+                  - code [ref=e1368]: gbrain check-resolvable
+                  - text: to accept
+                  - code [ref=e1369]: AGENTS.md
+                  - text: as a resolver file alongside
+                  - code [ref=e1370]: RESOLVER.md
+                  - text: ", at either the skills directory OR one level up (OpenClaw-native workspace-root layout). The skill manifest auto-derives from walking"
+                  - code [ref=e1371]: skills/*/SKILL.md
+                  - text: when
+                  - code [ref=e1372]: manifest.json
+                  - text: is missing. Set
+                  - code [ref=e1373]: OPENCLAW_WORKSPACE=~/your-openclaw/workspace
+                  - text: "and everything just works:"
+                - generic [ref=e1374]:
+                  - generic [ref=e1375]:
+                    - text: export OPENCLAW_WORKSPACE=~/your-openclaw/workspace gbrain check-resolvable --verbose
+                    - generic [ref=e1376]: "# Auto-detects: AGENTS.md at workspace root, 107 skills derived from SKILL.md walk,"
+                    - generic [ref=e1377]: "# 15 unreachable errors surfaced, 108 advisory warnings for overlaps and gaps."
+                  - button "Copy" [ref=e1379] [cursor=pointer]:
+                    - img [ref=e1380]
+                - paragraph [ref=e1383]: First run on a real OpenClaw deployment found 15 unreachable skills out of 102 — about 15% of the tree was dark. The essay's "skills the agent can never reach" footgun, now visible.
+                - generic [ref=e1384]:
+                  - heading "gbrain skillpack install — drop 25 curated skills into your OpenClaw" [level=3] [ref=e1385]:
+                    - code [ref=e1386]: gbrain skillpack install
+                    - text: — drop 25 curated skills into your OpenClaw
+                  - 'link "Permalink: gbrain skillpack install — drop 25 curated skills into your OpenClaw" [ref=e1387] [cursor=pointer]':
+                    - /url: "#gbrain-skillpack-install--drop-25-curated-skills-into-your-openclaw"
+                    - img [ref=e1388]
+                - paragraph [ref=e1390]:
+                  - text: The skills gbrain ships are a curated bundle. Install them into your workspace with dependency closure (shared conventions come along), per-file diff protection (your local edits are never clobbered without
+                  - code [ref=e1391]: "--overwrite-local"
+                  - text: ), a file lock that serializes concurrent installers, and an atomic managed-block update to your AGENTS.md so you can see exactly what gbrain wrote.
+                - generic [ref=e1392]:
+                  - generic [ref=e1393]:
+                    - text: gbrain skillpack list
+                    - generic [ref=e1394]: "# 25 curated skills"
+                    - text: gbrain skillpack install brain-ops
+                    - generic [ref=e1395]: "# one skill + its shared conventions"
+                    - text: gbrain skillpack install --all
+                    - generic [ref=e1396]: "# the full bundle"
+                    - text: gbrain skillpack install brain-ops --dry-run
+                    - generic [ref=e1397]: "# preview; no writes"
+                    - text: gbrain skillpack diff brain-ops
+                    - generic [ref=e1398]: "# compare bundle vs your local copy"
+                  - button "Copy" [ref=e1400] [cursor=pointer]:
+                    - img [ref=e1401]
+                - paragraph [ref=e1404]:
+                  - text: Re-running is safe. The managed-block markers in your AGENTS.md let
+                  - code [ref=e1405]: skillpack install
+                  - text: accumulate rows across separate single-skill installs instead of overwriting each other. A receipt comment inside the fence (
+                  - code [ref=e1406]: <!-- gbrain:skillpack:manifest cumulative-slugs="..." -->
+                  - text: ) tracks what gbrain has installed across runs.
+                  - code [ref=e1407]: install --all
+                  - text: is the only path that prunes; per-skill install never deletes what it didn't install. If you hand-add a row inside the fence, gbrain preserves it on reinstall and emits a stderr notice telling your agent to investigate.
+                - paragraph [ref=e1408]:
+                  - strong [ref=e1409]: Skillify is the piece that makes the skills tree survive six months of compounding work.
+                  - text: Read
+                  - link "skills/skillify/SKILL.md" [ref=e1410] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/skills/skillify/SKILL.md
+                    - code [ref=e1411]: skills/skillify/SKILL.md
+                  - text: for the full 10-item checklist and the anti-patterns it catches.
+                - generic [ref=e1412]:
+                  - 'heading "Storage tiering: keep bulk content out of git (v0.22.11)" [level=2] [ref=e1413]'
+                  - 'link "Permalink: Storage tiering: keep bulk content out of git (v0.22.11)" [ref=e1414] [cursor=pointer]':
+                    - /url: "#storage-tiering-keep-bulk-content-out-of-git-v02211"
+                    - img [ref=e1415]
+                - paragraph [ref=e1417]: When your brain crosses 100K files and bulk machine-generated content (tweets, articles, transcripts) becomes the size driver, declare which directories belong in git and which live in the database only.
+                - generic [ref=e1418]:
+                  - generic [ref=e1419]:
+                    - generic [ref=e1420]: "# gbrain.yml at the brain repo root"
+                    - text: "storage: db_tracked: - people/ - companies/ - deals/ db_only: - media/x/ - media/articles/ - meetings/transcripts/"
+                  - button "Copy" [ref=e1422] [cursor=pointer]:
+                    - img [ref=e1423]
+                - paragraph [ref=e1426]:
+                  - code [ref=e1427]: gbrain sync
+                  - text: auto-manages your
+                  - code [ref=e1428]: .gitignore
+                  - text: for
+                  - code [ref=e1429]: db_only
+                  - text: paths.
+                  - code [ref=e1430]: gbrain export --restore-only --repo .
+                  - text: repopulates missing files from the database (container restart, fresh clone, accidental rm).
+                  - code [ref=e1431]: gbrain storage status
+                  - text: shows the tier breakdown.
+                - paragraph [ref=e1432]:
+                  - text: "Full guide:"
+                  - link "docs/storage-tiering.md" [ref=e1433] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/storage-tiering.md
+                  - text: .
+                - generic [ref=e1434]:
+                  - heading "Getting Data In" [level=2] [ref=e1435]
+                  - 'link "Permalink: Getting Data In" [ref=e1436] [cursor=pointer]':
+                    - /url: "#getting-data-in"
+                    - img [ref=e1437]
+                - paragraph [ref=e1439]: GBrain ships integration recipes that your agent sets up for you. Each recipe tells the agent what credentials to ask for, how to validate, and what cron to register.
+                - table [ref=e1441]:
+                  - rowgroup [ref=e1442]:
+                    - row "Recipe Requires What It Does" [ref=e1443]:
+                      - columnheader "Recipe" [ref=e1444]
+                      - columnheader "Requires" [ref=e1445]
+                      - columnheader "What It Does" [ref=e1446]
+                  - rowgroup [ref=e1447]:
+                    - row "Public Tunnel — Fixed URL for MCP + voice (ngrok Hobby $8/mo)" [ref=e1448]:
+                      - cell "Public Tunnel" [ref=e1449]:
+                        - link "Public Tunnel" [ref=e1450] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/ngrok-tunnel.md
+                      - cell "—" [ref=e1451]
+                      - cell "Fixed URL for MCP + voice (ngrok Hobby $8/mo)" [ref=e1452]
+                    - row "Credential Gateway — Gmail + Calendar access" [ref=e1453]:
+                      - cell "Credential Gateway" [ref=e1454]:
+                        - link "Credential Gateway" [ref=e1455] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/credential-gateway.md
+                      - cell "—" [ref=e1456]
+                      - cell "Gmail + Calendar access" [ref=e1457]
+                    - row "Voice-to-Brain ngrok-tunnel Phone calls to brain pages (Twilio + OpenAI Realtime)" [ref=e1458]:
+                      - cell "Voice-to-Brain" [ref=e1459]:
+                        - link "Voice-to-Brain" [ref=e1460] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/twilio-voice-brain.md
+                      - cell "ngrok-tunnel" [ref=e1461]
+                      - cell "Phone calls to brain pages (Twilio + OpenAI Realtime)" [ref=e1462]
+                    - row "Email-to-Brain credential-gateway Gmail to entity pages" [ref=e1463]:
+                      - cell "Email-to-Brain" [ref=e1464]:
+                        - link "Email-to-Brain" [ref=e1465] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/email-to-brain.md
+                      - cell "credential-gateway" [ref=e1466]
+                      - cell "Gmail to entity pages" [ref=e1467]
+                    - row "X-to-Brain — Twitter timeline + mentions + deletions" [ref=e1468]:
+                      - cell "X-to-Brain" [ref=e1469]:
+                        - link "X-to-Brain" [ref=e1470] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/x-to-brain.md
+                      - cell "—" [ref=e1471]
+                      - cell "Twitter timeline + mentions + deletions" [ref=e1472]
+                    - row "Calendar-to-Brain credential-gateway Google Calendar to searchable daily pages" [ref=e1473]:
+                      - cell "Calendar-to-Brain" [ref=e1474]:
+                        - link "Calendar-to-Brain" [ref=e1475] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/calendar-to-brain.md
+                      - cell "credential-gateway" [ref=e1476]
+                      - cell "Google Calendar to searchable daily pages" [ref=e1477]
+                    - row "Meeting Sync — Circleback transcripts to brain pages with attendees" [ref=e1478]:
+                      - cell "Meeting Sync" [ref=e1479]:
+                        - link "Meeting Sync" [ref=e1480] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/meeting-sync.md
+                      - cell "—" [ref=e1481]
+                      - cell "Circleback transcripts to brain pages with attendees" [ref=e1482]
+                    - row "Restart Sweep OpenClaw + Telegram Detect dropped Telegram messages after OpenClaw gateway restarts" [ref=e1483]:
+                      - cell "Restart Sweep" [ref=e1484]:
+                        - link "Restart Sweep" [ref=e1485] [cursor=pointer]:
+                          - /url: /garrytan/gbrain/blob/master/recipes/restart-sweep.md
+                      - cell "OpenClaw + Telegram" [ref=e1486]
+                      - cell "Detect dropped Telegram messages after OpenClaw gateway restarts" [ref=e1487]
+                - paragraph [ref=e1488]:
+                  - strong [ref=e1489]: Data research recipes
+                  - text: extract structured data from email into tracked brain pages. Built-in recipes for investor updates (MRR, ARR, runway, headcount), expense tracking, and company metrics. Create your own with
+                  - code [ref=e1490]: gbrain research init
+                  - text: .
+                - paragraph [ref=e1491]:
+                  - text: Run
+                  - code [ref=e1492]: gbrain integrations
+                  - text: to see status.
+                - generic [ref=e1493]:
+                  - heading "GBrain + GStack" [level=2] [ref=e1494]
+                  - 'link "Permalink: GBrain + GStack" [ref=e1495] [cursor=pointer]':
+                    - /url: "#gbrain--gstack"
+                    - img [ref=e1496]
+                - paragraph [ref=e1498]:
+                  - link "GStack" [ref=e1499] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gstack
+                  - text: is the engine. GBrain is the mod.
+                - list [ref=e1500]:
+                  - listitem [ref=e1501]:
+                    - strong [ref=e1502]:
+                      - link "GStack" [ref=e1503] [cursor=pointer]:
+                        - /url: https://github.com/garrytan/gstack
+                    - text: = coding skills (ship, review, QA, investigate, office-hours, retro). 70,000+ stars, 30,000 developers per day. When your agent codes on itself, it uses GStack.
+                  - listitem [ref=e1504]:
+                    - strong [ref=e1505]: GBrain
+                    - text: = everything-else skills (brain ops, signal detection, ingestion, enrichment, cron, reports, identity). When your agent remembers, thinks, and operates, it uses GBrain.
+                  - listitem [ref=e1506]:
+                    - strong [ref=e1507]:
+                      - code [ref=e1508]: hosts/gbrain.ts
+                    - text: = the bridge. Tells GStack's coding skills to check the brain before coding.
+                - paragraph [ref=e1509]:
+                  - code [ref=e1510]: gbrain init
+                  - text: detects if GStack is installed and reports mod status. If GStack isn't there, it tells you how to get it.
+                - generic [ref=e1511]:
+                  - heading "Architecture" [level=2] [ref=e1512]
+                  - 'link "Permalink: Architecture" [ref=e1513] [cursor=pointer]':
+                    - /url: "#architecture"
+                    - img [ref=e1514]
+                - generic [ref=e1516]:
+                  - code [ref=e1518]: ┌──────────────────┐ ┌───────────────┐ ┌──────────────────┐ │ Brain Repo │ │ GBrain │ │ AI Agent │ │ (git) │ │ (retrieval) │ │ (read/write) │ │ │ │ │ │ │ │ markdown files │───>│ Postgres + │<──>│ 29 skills │ │ = source of │ │ pgvector │ │ define HOW to │ │ truth │ │ │ │ use the brain │ │ │<───│ hybrid │ │ │ │ human can │ │ search │ │ RESOLVER.md │ │ always read │ │ (vector + │ │ routes intent │ │ & edit │ │ keyword + │ │ to skill │ │ │ │ RRF) │ │ │ └──────────────────┘ └───────────────┘ └──────────────────┘
+                  - button "Copy" [ref=e1520] [cursor=pointer]:
+                    - img [ref=e1521]
+                - paragraph [ref=e1524]:
+                  - text: The repo is the system of record. GBrain is the retrieval layer. The agent reads and writes through both. Human always wins... edit any markdown file and
+                  - code [ref=e1525]: gbrain sync
+                  - text: picks up the changes.
+                - paragraph [ref=e1526]:
+                  - text: For multi-machine setups (cross-machine thin client) and multi-worktree setups (per-worktree code engine + shared remote artifacts), see
+                  - link "docs/architecture/topologies.md" [ref=e1527] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/architecture/topologies.md
+                    - code [ref=e1528]: docs/architecture/topologies.md
+                  - text: .
+                - generic [ref=e1529]:
+                  - heading "The Knowledge Model" [level=2] [ref=e1530]
+                  - 'link "Permalink: The Knowledge Model" [ref=e1531] [cursor=pointer]':
+                    - /url: "#the-knowledge-model"
+                    - img [ref=e1532]
+                - paragraph [ref=e1534]: "Every page follows the compiled truth + timeline pattern:"
+                - generic [ref=e1535]:
+                  - generic [ref=e1536]: "--- type: concept title: Do Things That Don't Scale tags: [startups, growth, pg-essay] --- Paul Graham's argument that startups should do unscalable things early on. The key insight: the unscalable effort teaches you what users actually want, which you can't learn any other way. --- - 2013-07-01: Published on paulgraham.com - 2024-11-15: Referenced in batch W25 kickoff talk"
+                  - button "Copy" [ref=e1538] [cursor=pointer]:
+                    - img [ref=e1539]
+                - paragraph [ref=e1542]:
+                  - text: Above the
+                  - code [ref=e1543]: "---"
+                  - text: ":"
+                  - strong [ref=e1544]: compiled truth
+                  - text: ". Your current best understanding. Gets rewritten when new evidence changes the picture. Below:"
+                  - strong [ref=e1545]: timeline
+                  - text: . Append-only evidence trail. Never edited, only added to.
+                - generic [ref=e1546]:
+                  - heading "Knowledge Graph" [level=2] [ref=e1547]
+                  - 'link "Permalink: Knowledge Graph" [ref=e1548] [cursor=pointer]':
+                    - /url: "#knowledge-graph"
+                    - img [ref=e1549]
+                - paragraph [ref=e1551]: Pages aren't just text. Every mention of a person, company, or concept becomes a typed link in a structured graph. The brain wires itself.
+                - generic [ref=e1552]:
+                  - code [ref=e1554]: "Write a meeting page mentioning Alice and Acme AI -> Auto-link extracts entity refs from content (zero LLM calls) -> Infers types: meeting page + person ref => `attended` \"CEO of X\" pattern => `works_at` \"invested in\" => `invested_in` \"advises\", \"advisor\" => `advises` \"founded\", \"co-founded\" => `founded` -> Reconciles stale links: edits remove links no longer in content -> Backlinks rank well-connected entities higher in search"
+                  - button "Copy" [ref=e1556] [cursor=pointer]:
+                    - img [ref=e1557]
+                - generic [ref=e1560]:
+                  - generic [ref=e1561]:
+                    - text: gbrain graph-query people/alice --type attended --depth 2
+                    - generic [ref=e1562]: "# returns who Alice met with, transitively"
+                  - button "Copy" [ref=e1564] [cursor=pointer]:
+                    - img [ref=e1565]
+                - paragraph [ref=e1568]: "The graph powers questions vector search can't: \"who works at Acme AI?\", \"what has Bob invested in?\", \"find the connection between Alice and Carol\". Backfill an existing brain in one command:"
+                - generic [ref=e1569]:
+                  - generic [ref=e1570]:
+                    - text: gbrain extract links --source db
+                    - generic [ref=e1571]: "# wire up the existing 29K pages"
+                    - text: gbrain extract timeline --source db
+                    - generic [ref=e1572]: "# extract dated events from markdown timelines"
+                  - button "Copy" [ref=e1574] [cursor=pointer]:
+                    - img [ref=e1575]
+                - paragraph [ref=e1578]:
+                  - text: "Then ask graph questions or watch the search ranking improve. Benchmarked side-by-side against ripgrep-BM25, vector-only RAG (same embedder), and gbrain-with-graph-disabled: gbrain lands"
+                  - strong [ref=e1579]: P@5 49.1%, R@5 97.9%
+                  - text: on a 240-page Opus-generated rich-prose corpus, beating hybrid-nograph by
+                  - strong [ref=e1580]: +31.4 points P@5
+                  - text: ". Isolate the contribution: v0.11→v0.12 moved the same gbrain codebase from P@5 22.1% → 49.1% on identical inputs, so typed-link extract quality is load-bearing. Full scorecards + reproducible corpus:"
+                  - link "gbrain-evals" [ref=e1581] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain-evals
+                  - text: .
+                - generic [ref=e1582]:
+                  - heading "Search" [level=2] [ref=e1583]
+                  - 'link "Permalink: Search" [ref=e1584] [cursor=pointer]':
+                    - /url: "#search"
+                    - img [ref=e1585]
+                - paragraph [ref=e1587]: "Hybrid search: vector + keyword + RRF fusion + multi-query expansion + 4-layer dedup."
+                - generic [ref=e1588]:
+                  - code [ref=e1590]: "Query -> Intent classifier (entity? temporal? event? general?) -> Multi-query expansion (Claude Haiku) -> Vector search (HNSW cosine) + Keyword search (tsvector) -> RRF fusion: score = sum(1/(60 + rank)) -> Cosine re-scoring + compiled truth boost -> 4-layer dedup + compiled truth guarantee -> Results"
+                  - button "Copy" [ref=e1592] [cursor=pointer]:
+                    - img [ref=e1593]
+                - paragraph [ref=e1596]:
+                  - text: "Keyword alone misses conceptual matches. Vector alone misses exact phrases. RRF gets both. Search quality is benchmarked and reproducible:"
+                  - code [ref=e1597]: gbrain eval --qrels queries.json
+                  - text: measures P@k, Recall@k, MRR, and nDCG@k. A/B test config changes before deploying them.
+                - generic [ref=e1598]:
+                  - 'heading "Why it works: many strategies in concert" [level=2] [ref=e1599]'
+                  - 'link "Permalink: Why it works: many strategies in concert" [ref=e1600] [cursor=pointer]':
+                    - /url: "#why-it-works-many-strategies-in-concert"
+                    - img [ref=e1601]
+                - paragraph [ref=e1603]: The brain isn't one trick. Every retrieval question goes through ~20 deterministic techniques layered together. No single one is magic; the win comes from stacking them so each layer covers what the others miss.
+                - generic [ref=e1604]:
+                  - code [ref=e1606]: Question │ ├─ INGESTION (every put_page) │ ├─ Recursive markdown chunking (or semantic / LLM-guided) │ ├─ Embedding cache invalidation on edit │ └─ Idempotent imports (content-hash dedup) │ ├─ GRAPH EXTRACTION (auto-link post-hook, zero LLM) │ ├─ Entity-ref regex (markdown links + bare slugs) │ ├─ Code-fence stripping (no false-positive slugs in code blocks) │ ├─ Typed inference cascade (FOUNDED → INVESTED → ADVISES → WORKS_AT) │ ├─ Page-role priors (partner-bio language → invested_in) │ ├─ Within-page dedup (same target collapses to one link) │ ├─ Stale-link reconciliation (edits remove dropped refs) │ └─ Multi-type link constraint (same person can works_at AND advises) │ ├─ SEARCH PIPELINE (every query) │ ├─ Intent classifier (entity / temporal / event / general — auto-routes) │ ├─ Multi-query expansion (Haiku rephrases the question 3 ways) │ ├─ Vector search (HNSW cosine over OpenAI embeddings) │ ├─ Keyword search (Postgres tsvector + websearch_to_tsquery) │ ├─ Source-aware ranking (curated dirs outrank chat/daily swamp at SQL layer) │ ├─ Hard-exclude (test/ archive/ attachments/ .raw/ filtered before retrieval) │ ├─ Reciprocal Rank Fusion (score = sum 1/(60+rank) across both) │ ├─ Cosine re-scoring (re-rank chunks against actual query embedding) │ ├─ Compiled-truth boost (assessments outrank timeline noise) │ ├─ Backlink boost (well-connected entities rank higher) │ └─ Source-aware dedup (one CT chunk per page guaranteed) │ ├─ GRAPH TRAVERSAL (relational queries) │ ├─ Recursive CTE with cycle prevention (visited-array check) │ ├─ Type-filtered edges (--type works_at, attended, etc.) │ ├─ Direction control (in / out / both) │ └─ Depth-capped (≤10 for remote MCP; DoS prevention) │ └─ AGENT WORKFLOW (graph-confident hybrid) ├─ Graph-query first (high-precision typed answers) ├─ Grep fallback when graph returns nothing └─ Graph hits ranked first in top-K (better P@K and R@K)
+                  - button "Copy" [ref=e1608] [cursor=pointer]:
+                    - img [ref=e1609]
+                - paragraph [ref=e1612]: "End-to-end on the BrainBench v1 corpus (240 rich-prose pages, before/after PR #188):"
+                - table [ref=e1614]:
+                  - rowgroup [ref=e1615]:
+                    - 'row "Metric BEFORE PR #188 AFTER PR #188 Δ" [ref=e1616]':
+                      - columnheader "Metric" [ref=e1617]
+                      - 'columnheader "BEFORE PR #188" [ref=e1618]'
+                      - 'columnheader "AFTER PR #188" [ref=e1619]'
+                      - columnheader "Δ" [ref=e1620]
+                  - rowgroup [ref=e1621]:
+                    - row "Precision@5 39.2% 44.7% +5.4 pts" [ref=e1622]:
+                      - cell "Precision@5" [ref=e1623]:
+                        - strong [ref=e1624]: Precision@5
+                      - cell "39.2%" [ref=e1625]
+                      - cell "44.7%" [ref=e1626]:
+                        - strong [ref=e1627]: 44.7%
+                      - cell "+5.4 pts" [ref=e1628]:
+                        - strong [ref=e1629]: +5.4 pts
+                    - row "Recall@5 83.1% 94.6% +11.5 pts" [ref=e1630]:
+                      - cell "Recall@5" [ref=e1631]:
+                        - strong [ref=e1632]: Recall@5
+                      - cell "83.1%" [ref=e1633]
+                      - cell "94.6%" [ref=e1634]:
+                        - strong [ref=e1635]: 94.6%
+                      - cell "+11.5 pts" [ref=e1636]:
+                        - strong [ref=e1637]: +11.5 pts
+                    - row "Correct in top-5 217 247 +30" [ref=e1638]:
+                      - cell "Correct in top-5" [ref=e1639]
+                      - cell "217" [ref=e1640]
+                      - cell "247" [ref=e1641]
+                      - cell "+30" [ref=e1642]:
+                        - strong [ref=e1643]: "+30"
+                    - row "Graph-only F1 (ablation) 57.8% (grep) 86.6% +28.8 pts" [ref=e1644]:
+                      - cell "Graph-only F1 (ablation)" [ref=e1645]
+                      - cell "57.8% (grep)" [ref=e1646]
+                      - cell "86.6%" [ref=e1647]:
+                        - strong [ref=e1648]: 86.6%
+                      - cell "+28.8 pts" [ref=e1649]:
+                        - strong [ref=e1650]: +28.8 pts
+                - paragraph [ref=e1651]:
+                  - text: "Plus 5 orthogonal capability checks (identity resolution, temporal queries, performance at 10K-page scale, robustness to malformed input, MCP operation contract). All pass. Full report:"
+                  - link "gbrain-evals" [ref=e1652] [cursor=pointer]:
+                    - /url: https://github.com/garrytan/gbrain-evals
+                  - text: .
+                - paragraph [ref=e1653]:
+                  - text: "The point: each technique handles a class of inputs the others miss. Vector search misses exact slug refs; keyword catches them. Keyword misses conceptual matches; vector catches them. RRF picks the best of both. Compiled-truth boost keeps assessments above timeline noise. Auto-link extraction wires the graph that lets backlink boost rank well-connected entities higher. Graph traversal answers questions search alone can't reach. The agent picks graph-first for precision and falls back to keyword for recall."
+                  - strong [ref=e1654]: All deterministic, all in concert, all measured.
+                - generic [ref=e1655]:
+                  - heading "Voice" [level=2] [ref=e1656]
+                  - 'link "Permalink: Voice" [ref=e1657] [cursor=pointer]':
+                    - /url: "#voice"
+                    - img [ref=e1658]
+                - paragraph [ref=e1660]: Call a phone number. Your AI answers. It knows who's calling, pulls their full context from the brain, and responds like someone who actually knows your world. When the call ends, a brain page appears with the transcript, entity detection, and cross-references.
+                - paragraph [ref=e1661]:
+                  - link "Voice client connected" [ref=e1662] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/images/voice-client.png
+                    - img "Voice client connected" [ref=e1663]
+                - blockquote [ref=e1664]:
+                  - paragraph [ref=e1665]:
+                    - link "See it in action" [ref=e1666] [cursor=pointer]:
+                      - /url: https://x.com/garrytan/status/2043022208512172263
+                - paragraph [ref=e1667]:
+                  - text: "The voice recipe ships with GBrain:"
+                  - link "Voice-to-Brain" [ref=e1668] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/recipes/twilio-voice-brain.md
+                  - text: . WebRTC works in a browser tab with zero setup. A real phone number is optional.
+                - generic [ref=e1669]:
+                  - heading "Engine Architecture" [level=2] [ref=e1670]
+                  - 'link "Permalink: Engine Architecture" [ref=e1671] [cursor=pointer]':
+                    - /url: "#engine-architecture"
+                    - img [ref=e1672]
+                - generic [ref=e1674]:
+                  - code [ref=e1676]: CLI / MCP Server (thin wrappers, identical operations) | BrainEngine interface (pluggable) | +--------+--------+ | | PGLiteEngine PostgresEngine (default) (Supabase) | | ~/.gbrain/ Supabase Pro ($25/mo) brain.pglite Postgres + pgvector embedded PG 17.5 gbrain migrate --to supabase|pglite (bidirectional migration)
+                  - button "Copy" [ref=e1678] [cursor=pointer]:
+                    - img [ref=e1679]
+                - paragraph [ref=e1682]:
+                  - text: "PGLite: embedded Postgres, no server, zero config. When your brain outgrows local (1000+ files, multi-device),"
+                  - code [ref=e1683]: gbrain migrate --to supabase
+                  - text: moves everything.
+                - generic [ref=e1684]:
+                  - heading "File Storage" [level=2] [ref=e1685]
+                  - 'link "Permalink: File Storage" [ref=e1686] [cursor=pointer]':
+                    - /url: "#file-storage"
+                    - img [ref=e1687]
+                - paragraph [ref=e1689]: "Brain repos accumulate binaries. GBrain has a three-stage migration:"
+                - generic [ref=e1690]:
+                  - generic [ref=e1691]:
+                    - text: gbrain files mirror <dir>
+                    - generic [ref=e1692]: "# copy to cloud, local untouched"
+                    - text: gbrain files redirect <dir>
+                    - generic [ref=e1693]: "# replace local with .redirect pointers"
+                    - text: gbrain files clean <dir>
+                    - generic [ref=e1694]: "# remove pointers, cloud only"
+                    - text: gbrain files restore <dir>
+                    - generic [ref=e1695]: "# download everything back (undo)"
+                  - button "Copy" [ref=e1697] [cursor=pointer]:
+                    - img [ref=e1698]
+                - paragraph [ref=e1701]: "Storage backends: S3-compatible (AWS, R2, MinIO), Supabase Storage, or local."
+                - generic [ref=e1702]:
+                  - heading "Commands" [level=2] [ref=e1703]
+                  - 'link "Permalink: Commands" [ref=e1704] [cursor=pointer]':
+                    - /url: "#commands"
+                    - img [ref=e1705]
+                - generic [ref=e1707]:
+                  - code [ref=e1709]: "SETUP gbrain init [--supabase|--url] Create brain (PGLite default) gbrain migrate --to supabase|pglite Bidirectional engine migration gbrain upgrade Self-update with feature discovery PAGES gbrain get <slug> Read a page (fuzzy slug matching) gbrain put <slug> [< file.md] Write/update (auto-versions) gbrain delete <slug> Delete a page gbrain list [--type T] [--tag T] List with filters SEARCH gbrain search <query> Keyword search (tsvector) gbrain query <question> Hybrid search (vector + keyword + RRF) IMPORT gbrain import <dir> [--no-embed] [--workers N] Import markdown (idempotent) gbrain sync [--repo <path>] [--workers N] Git-to-brain incremental sync (>100-file diffs auto-parallelize 4 workers on Postgres) gbrain export [--dir ./out/] Export to markdown FILES gbrain files list|upload|sync|verify File storage operations EMBEDDINGS gbrain embed [<slug>|--all|--stale] Generate/refresh embeddings LINKS + GRAPH gbrain link|unlink|backlinks Cross-reference management gbrain extract links|timeline|all Batch backfill from existing pages (--source db|fs, --type, --since, --dry-run) gbrain graph-query <slug> Typed traversal (--type T --depth N --direction in|out|both) JOBS (Minions) gbrain jobs submit <name> [--params JSON] [--follow] Submit a background job gbrain jobs list [--status S] [--queue Q] List jobs with filters gbrain jobs get|cancel|retry|delete <id> Manage job lifecycle gbrain jobs prune [--older-than 30d] Clean completed/dead jobs gbrain jobs stats Job health dashboard gbrain jobs smoke One-command health check gbrain jobs work [--queue Q] [--concurrency N] Start worker daemon SKILLS (v0.19) gbrain skillify scaffold <name> Create 5 stub files + idempotent resolver row gbrain skillify check [path] 10-item audit of a skill gbrain skillpack list Print the 25 curated skills in the bundle gbrain skillpack install <name> Copy one skill + its shared conventions into target gbrain skillpack install --all Install the full curated bundle gbrain skillpack diff <name> Per-file diff: bundle vs target workspace gbrain check-resolvable [--strict] Resolver audit (reachability, MECE, DRY, routing, filing, SKILLIFY_STUB). Accepts RESOLVER.md OR AGENTS.md. gbrain routing-eval [--llm] [--json] Intent→skill routing accuracy on fixtures EVAL gbrain eval --qrels <path> Legacy IR-eval (P@k, R@k, MRR, nDCG@k against ground truth) gbrain eval export [--since DUR] Stream captured eval_candidates as NDJSON (BrainBench-Real) gbrain eval prune --older-than DUR Retention cleanup for eval_candidates (requires window) gbrain eval replay --against FILE Replay captured queries vs current build (Jaccard@k, top-1, latency Δ) gbrain eval longmemeval <dataset> Run public LongMemEval against gbrain hybrid retrieval (v0.28.8) [--limit N] [--retrieval-only] [--keyword-only] [--expansion] [--top-k K] [--model M] [--output FILE] ADMIN gbrain doctor [--json] [--fast] Health checks (resolver, skills, DB, embeddings) gbrain doctor --fix [--dry-run] Auto-fix DRY violations (delegate inlined rules to conventions) gbrain doctor --locks List idle-in-tx backends (57014 diagnostic, Postgres only) gbrain stats Brain statistics gbrain models Show live model routing (tier defaults, per-task overrides, alias map, source-of-truth). v0.31.12: tier system + recipe-models merge. Power-user override: gbrain config set models.default opus gbrain config set models.tier.deep opus gbrain models doctor 1-token reachability probe for each configured chat/expansion model. Catches `model_not_found` before the next agent run silently degrades. [--skip=<provider>] [--json] gbrain serve MCP server (stdio) gbrain serve --http [--port 3131] HTTP MCP server with OAuth 2.1 + admin dashboard [--token-ttl 3600] [--enable-dcr] [--public-url URL] [--log-full-params] gbrain auth create|list|revoke|test Legacy bearer token management gbrain auth register-client <name> Register an OAuth 2.1 client --grant-types client_credentials,authorization_code --scopes \"read write admin\" gbrain auth revoke-client <client_id> Revoke an OAuth 2.1 client (cascade purges active tokens + auth codes via FK CASCADE) # OAuth 2.1 clients can also be registered from the /admin dashboard or # programmatically via oauthProvider.registerClientManual() for host-repo wrappers. gbrain integrations Integration recipe dashboard gbrain sources list|add|remove|... Multi-source brain management (v0.18) v0.28.2: --url <https://...> registers a federated remote git repo; clone is auto-managed under $GBRAIN_HOME/clones/<id>/ and re-cloned on sync if it goes missing. Also exposed via MCP for remote agent setup (whoami + sources_{add,list,remove,status}). gbrain dream [--dry-run] [--phase N] 11-phase maintenance cycle (lint→backlinks→sync→synthesize →extract→patterns→recompute_emotional_weight→consolidate →embed→orphans→purge). v0.23 added synthesize + patterns. v0.29 added emotional-weight recompute. v0.30.2: synthesize chunks fat transcripts. v0.31: consolidate promotes hot facts into takes overnight. gbrain dream --input <file> Ad-hoc transcript synthesis (implies --phase synthesize) gbrain dream --date YYYY-MM-DD Synthesize a single day; --from/--to for backfill ranges # v0.31 Hot Memory: cross-session facts queryable in real time. gbrain recall <entity> List active facts for an entity (newest first) gbrain recall --since \"1h ago\" Recency-filtered recall gbrain recall --session <id> Facts captured in a session id gbrain recall --today Markdown render with kind icons (📅🎯🤝💭📌) gbrain recall --supersessions Audit log of auto-overwritten facts gbrain recall --grep <text> Substring filter (case-insensitive) gbrain recall --as-context Prompt-injection-ready markdown for headless agents gbrain recall --json Structured output with effective_confidence per row gbrain forget <fact-id> Expire a fact (soft delete; never hard-DELETE) gbrain check-backlinks check|fix Back-link enforcement gbrain lint [--fix] LLM artifact detection gbrain repair-jsonb [--dry-run] Repair v0.12.0 double-encoded JSONB (Postgres) gbrain orphans [--json] [--count] Find pages with zero inbound wikilinks gbrain transcribe <audio> Transcribe audio (Groq Whisper) gbrain research init <name> Scaffold a data-research recipe gbrain research list Show available recipes"
+                  - button "Copy" [ref=e1711] [cursor=pointer]:
+                    - img [ref=e1712]
+                - paragraph [ref=e1715]:
+                  - text: Run
+                  - code [ref=e1716]: gbrain --help
+                  - text: for the full reference.
+                - generic [ref=e1717]:
+                  - heading "Origin Story" [level=2] [ref=e1718]
+                  - 'link "Permalink: Origin Story" [ref=e1719] [cursor=pointer]':
+                    - /url: "#origin-story"
+                    - img [ref=e1720]
+                - paragraph [ref=e1722]:
+                  - text: I was setting up my
+                  - link "OpenClaw" [ref=e1723] [cursor=pointer]:
+                    - /url: https://openclaw.ai
+                  - text: "agent and started a markdown brain repo. One page per person, one page per company, compiled truth on top, timeline on the bottom. Within a week: 10,000+ files, 3,000+ people, 13 years of calendar data, 280+ meeting transcripts, 300+ captured ideas."
+                - paragraph [ref=e1724]: The agent runs while I sleep. The dream cycle scans every conversation, enriches missing entities, fixes broken citations, consolidates memory. I wake up and the brain is smarter than when I went to sleep.
+                - paragraph [ref=e1725]: The skills in this repo are those patterns, generalized. What took 11 days to build by hand ships as a mod you install in 30 minutes.
+                - generic [ref=e1726]:
+                  - heading "Docs" [level=2] [ref=e1727]
+                  - 'link "Permalink: Docs" [ref=e1728] [cursor=pointer]':
+                    - /url: "#docs"
+                    - img [ref=e1729]
+                - paragraph [ref=e1731]:
+                  - strong [ref=e1732]: "For agents:"
+                - list [ref=e1733]:
+                  - listitem [ref=e1734]:
+                    - strong [ref=e1735]:
+                      - link "skills/RESOLVER.md" [ref=e1736] [cursor=pointer]:
+                        - /url: /garrytan/gbrain/blob/master/skills/RESOLVER.md
+                    - text: ... Start here. The skill dispatcher.
+                  - listitem [ref=e1737]:
+                    - link "Individual skill files" [ref=e1738] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/skills
+                    - text: ... 28 standalone instruction sets (25 ship in the curated
+                    - code [ref=e1739]: gbrain skillpack install
+                    - text: bundle)
+                  - listitem [ref=e1740]:
+                    - link "GBRAIN_SKILLPACK.md" [ref=e1741] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/GBRAIN_SKILLPACK.md
+                    - text: ... Legacy reference architecture
+                  - listitem [ref=e1742]:
+                    - link "Getting Data In" [ref=e1743] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/integrations/README.md
+                    - text: ... Integration recipes and data flow
+                  - listitem [ref=e1744]:
+                    - link "GBRAIN_VERIFY.md" [ref=e1745] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/GBRAIN_VERIFY.md
+                    - text: ... Installation verification
+                - paragraph [ref=e1746]:
+                  - strong [ref=e1747]: "For humans:"
+                - list [ref=e1748]:
+                  - listitem [ref=e1749]:
+                    - link "GBRAIN_RECOMMENDED_SCHEMA.md" [ref=e1750] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/GBRAIN_RECOMMENDED_SCHEMA.md
+                    - text: ... Brain repo directory structure
+                  - listitem [ref=e1751]:
+                    - link "Thin Harness, Fat Skills" [ref=e1752] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/ethos/THIN_HARNESS_FAT_SKILLS.md
+                    - text: ... Architecture philosophy
+                  - listitem [ref=e1753]:
+                    - link "ENGINES.md" [ref=e1754] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/ENGINES.md
+                    - text: ... Pluggable engine interface
+                - paragraph [ref=e1755]:
+                  - strong [ref=e1756]: "Reference:"
+                - list [ref=e1757]:
+                  - listitem [ref=e1758]:
+                    - link "GBRAIN_V0.md" [ref=e1759] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/docs/GBRAIN_V0.md
+                    - text: ... Full product spec
+                  - listitem [ref=e1760]:
+                    - link "CHANGELOG.md" [ref=e1761] [cursor=pointer]:
+                      - /url: /garrytan/gbrain/blob/master/CHANGELOG.md
+                    - text: ... Version history
+                - paragraph [ref=e1762]:
+                  - strong [ref=e1763]: "Benchmarks:"
+                - list [ref=e1764]:
+                  - listitem [ref=e1765]:
+                    - link "gbrain-evals" [ref=e1766] [cursor=pointer]:
+                      - /url: https://github.com/garrytan/gbrain-evals
+                    - text: ... BrainBench, the sibling repo that holds the eval harness, corpus, scorecards, and 4-adapter comparisons. Depends on gbrain; not installed alongside gbrain.
+                - generic [ref=e1767]:
+                  - heading "Contributing" [level=2] [ref=e1768]
+                  - 'link "Permalink: Contributing" [ref=e1769] [cursor=pointer]':
+                    - /url: "#contributing"
+                    - img [ref=e1770]
+                - paragraph [ref=e1772]:
+                  - text: See
+                  - link "CONTRIBUTING.md" [ref=e1773] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/CONTRIBUTING.md
+                  - text: . Run
+                  - code [ref=e1774]: bun run test
+                  - text: for the parallel unit-test fast loop (~85s on a Mac dev box, 3700+ tests) or
+                  - code [ref=e1775]: bun run verify
+                  - text: for the pre-push gate (privacy + jsonb + progress + test-isolation + wasm + admin-build + typecheck). For the full local CI gate (gitleaks + unit + all 29 E2E files in Docker, the same checks GH Actions runs), use
+                  - code [ref=e1776]: bun run ci:local
+                  - text: ... or
+                  - code [ref=e1777]: bun run ci:local:diff
+                  - text: for the diff-aware subset during fast iteration.
+                - paragraph [ref=e1778]:
+                  - text: If you're working on retrieval or any of the search/embedding/ranking surface, set
+                  - code [ref=e1779]: GBRAIN_CONTRIBUTOR_MODE=1
+                  - text: in your shell rc and use
+                  - code [ref=e1780]: gbrain eval replay
+                  - text: to gate your changes against a snapshot of real captured queries — the dev loop is documented in
+                  - link "docs/eval-bench.md" [ref=e1781] [cursor=pointer]:
+                    - /url: /garrytan/gbrain/blob/master/docs/eval-bench.md
+                    - code [ref=e1782]: docs/eval-bench.md
+                  - text: . Capture is
+                  - strong [ref=e1783]: off by default
+                  - text: for production users (no surprise data accumulation); the env var is the contributor opt-in.
+                - paragraph [ref=e1784]:
+                  - text: "PRs welcome for: new enrichment APIs, performance optimizations, additional engine backends, new skills following the conformance standard in"
+                  - code [ref=e1785]: skills/skill-creator/SKILL.md
+                  - text: .
+                - generic [ref=e1786]:
+                  - heading "License" [level=2] [ref=e1787]
+                  - 'link "Permalink: License" [ref=e1788] [cursor=pointer]':
+                    - /url: "#license"
+                    - img [ref=e1789]
+                - paragraph [ref=e1791]: MIT
+        - generic [ref=e1795]:
+          - generic [ref=e1798]:
+            - heading "About" [level=2] [ref=e1799]
+            - paragraph [ref=e1800]: Garry's Opinionated OpenClaw/Hermes Agent Brain
+            - heading "Resources" [level=3] [ref=e1801]
+            - link "Readme" [ref=e1803] [cursor=pointer]:
+              - /url: "#readme-ov-file"
+              - img [ref=e1804]
+              - text: Readme
+            - heading "License" [level=3] [ref=e1806]
+            - link "MIT license" [ref=e1808] [cursor=pointer]:
+              - /url: "#MIT-1-ov-file"
+              - img [ref=e1809]
+              - text: MIT license
+            - heading "Contributing" [level=3] [ref=e1811]
+            - link "Contributing" [ref=e1813] [cursor=pointer]:
+              - /url: "#contributing-ov-file"
+              - img [ref=e1814]
+              - text: Contributing
+            - heading "Security policy" [level=3] [ref=e1816]
+            - link "Security policy" [ref=e1818] [cursor=pointer]:
+              - /url: "#security-ov-file"
+              - img [ref=e1819]
+              - text: Security policy
+            - link "Activity" [ref=e1822] [cursor=pointer]:
+              - /url: /garrytan/gbrain/activity
+              - img [ref=e1823]
+              - text: Activity
+            - heading "Stars" [level=3] [ref=e1825]
+            - link "14.6k stars" [ref=e1827] [cursor=pointer]:
+              - /url: /garrytan/gbrain/stargazers
+              - img [ref=e1828]
+              - strong [ref=e1830]: 14.6k
+              - text: stars
+            - heading "Watchers" [level=3] [ref=e1831]
+            - link "63 watching" [ref=e1833] [cursor=pointer]:
+              - /url: /garrytan/gbrain/watchers
+              - img [ref=e1834]
+              - strong [ref=e1836]: "63"
+              - text: watching
+            - heading "Forks" [level=3] [ref=e1837]
+            - link "1.9k forks" [ref=e1839] [cursor=pointer]:
+              - /url: /garrytan/gbrain/forks
+              - img [ref=e1840]
+              - strong [ref=e1842]: 1.9k
+              - text: forks
+            - link "Report repository" [ref=e1844] [cursor=pointer]:
+              - /url: /contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fgarrytan%2Fgbrain&report=garrytan+%28user%29
+          - generic [ref=e1846]:
+            - heading "Releases" [level=2] [ref=e1847]:
+              - link "Releases" [ref=e1848] [cursor=pointer]:
+                - /url: /garrytan/gbrain/releases
+            - generic [ref=e1849]: No releases published
+          - generic [ref=e1851]:
+            - heading "Packages" [level=2] [ref=e1852]:
+              - link "Packages" [ref=e1853] [cursor=pointer]:
+                - /url: /users/garrytan/packages?repo_name=gbrain
+            - generic [ref=e1854]: No packages published
+          - generic [ref=e1856]:
+            - heading "Contributors 41" [level=2] [ref=e1857]:
+              - link "Contributors 41" [ref=e1858] [cursor=pointer]:
+                - /url: /garrytan/gbrain/graphs/contributors
+                - text: Contributors
+                - generic "41" [ref=e1859]
+            - list [ref=e1860]:
+              - listitem [ref=e1861]:
+                - link "@garrytan" [ref=e1862] [cursor=pointer]:
+                  - /url: https://github.com/garrytan
+                  - img "@garrytan" [ref=e1863]
+              - listitem [ref=e1864]:
+                - link "@claude" [ref=e1865] [cursor=pointer]:
+                  - /url: https://github.com/claude
+                  - img "@claude" [ref=e1866]
+              - listitem [ref=e1867]:
+                - link "@garrytan-agents" [ref=e1868] [cursor=pointer]:
+                  - /url: https://github.com/garrytan-agents
+                  - img "@garrytan-agents" [ref=e1869]
+              - listitem [ref=e1870]:
+                - link "@garagon" [ref=e1871] [cursor=pointer]:
+                  - /url: https://github.com/garagon
+                  - img "@garagon" [ref=e1872]
+              - listitem [ref=e1873]:
+                - link "@brandonlipman" [ref=e1874] [cursor=pointer]:
+                  - /url: https://github.com/brandonlipman
+                  - img "@brandonlipman" [ref=e1875]
+              - listitem [ref=e1876]:
+                - link "@orendi84" [ref=e1877] [cursor=pointer]:
+                  - /url: https://github.com/orendi84
+                  - img "@orendi84" [ref=e1878]
+              - listitem [ref=e1879]:
+                - link "@web-flow" [ref=e1880] [cursor=pointer]:
+                  - /url: https://github.com/web-flow
+                  - img "@web-flow" [ref=e1881]
+              - listitem [ref=e1882]:
+                - link "@anurag" [ref=e1883] [cursor=pointer]:
+                  - /url: https://github.com/anurag
+                  - img "@anurag" [ref=e1884]
+              - listitem [ref=e1885]:
+                - link "@notjbg" [ref=e1886] [cursor=pointer]:
+                  - /url: https://github.com/notjbg
+                  - img "@notjbg" [ref=e1887]
+              - listitem [ref=e1888]:
+                - link "@mgunnin" [ref=e1889] [cursor=pointer]:
+                  - /url: https://github.com/mgunnin
+                  - img "@mgunnin" [ref=e1890]
+              - listitem [ref=e1891]:
+                - link "@tmchow" [ref=e1892] [cursor=pointer]:
+                  - /url: https://github.com/tmchow
+                  - img "@tmchow" [ref=e1893]
+              - listitem [ref=e1894]:
+                - link "@danbr" [ref=e1895] [cursor=pointer]:
+                  - /url: https://github.com/danbr
+                  - img "@danbr" [ref=e1896]
+              - listitem [ref=e1897]:
+                - link "@eric-hth" [ref=e1898] [cursor=pointer]:
+                  - /url: https://github.com/eric-hth
+                  - img "@eric-hth" [ref=e1899]
+              - listitem [ref=e1900]:
+                - link "@joelwp" [ref=e1901] [cursor=pointer]:
+                  - /url: https://github.com/joelwp
+                  - img "@joelwp" [ref=e1902]
+            - link "+ 27 contributors" [ref=e1904] [cursor=pointer]:
+              - /url: /garrytan/gbrain/graphs/contributors
+          - generic [ref=e1906]:
+            - heading "Languages" [level=2] [ref=e1907]
+            - list [ref=e1913]:
+              - listitem [ref=e1914]:
+                - link "TypeScript 98.0%" [ref=e1915] [cursor=pointer]:
+                  - /url: /garrytan/gbrain/search?l=typescript
+                  - img [ref=e1916]
+                  - generic [ref=e1918]: TypeScript
+                  - generic [ref=e1919]: 98.0%
+              - listitem [ref=e1920]:
+                - link "Shell 1.3%" [ref=e1921] [cursor=pointer]:
+                  - /url: /garrytan/gbrain/search?l=shell
+                  - img [ref=e1922]
+                  - generic [ref=e1924]: Shell
+                  - generic [ref=e1925]: 1.3%
+              - listitem [ref=e1926]:
+                - generic [ref=e1927]:
+                  - img [ref=e1928]
+                  - generic [ref=e1930]: Other
+                  - generic [ref=e1931]: 0.7%
+  - contentinfo [ref=e1933]:
+    - heading "Footer" [level=2] [ref=e1934]
+    - generic [ref=e1935]:
+      - generic [ref=e1936]:
+        - link "GitHub Homepage" [ref=e1937] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e1938]
+        - generic [ref=e1940]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e1941]:
+        - heading "Footer navigation" [level=3] [ref=e1942]
+        - list "Footer navigation" [ref=e1943]:
+          - listitem [ref=e1944]:
+            - link "Terms" [ref=e1945] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e1946]:
+            - link "Privacy" [ref=e1947] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e1948]:
+            - link "Security" [ref=e1949] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e1950]:
+            - link "Status" [ref=e1951] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e1952]:
+            - link "Community" [ref=e1953] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e1954]:
+            - link "Docs" [ref=e1955] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e1956]:
+            - link "Contact" [ref=e1957] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e1958]:
+            - button "Manage cookies" [ref=e1960] [cursor=pointer]
+          - listitem [ref=e1961]:
+            - button "Do not share my personal information" [ref=e1963] [cursor=pointer]

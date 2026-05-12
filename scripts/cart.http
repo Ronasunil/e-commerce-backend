@@ -1,0 +1,337 @@
+# scripts/cart.http — manual REST client probes for the cart feature.
+#
+# Pairs with scripts/auth.http, scripts/users.http, scripts/products.http.
+# One URL family: /api/v1/cart — all behind requireAuth.
+#
+# Prereqs:
+#   docker compose up -d                       # Mongo replica set
+#   npm run dev
+#   node scripts/create-admin.js               # admin bootstrap
+#   register + verify-otp a regular user via scripts/auth.http
+#   create at least two products via scripts/products.http (one live USD, one
+#   live in a different currency, and one with a known stockQty for stock probes)
+#
+# Probes annotated [REVIEW FIX 1.1/1.2/1.3/2.1] were added by /plan-eng-review
+# to verify specific architectural decisions.
+
+@host = http://localhost:3000
+@base = {{host}}/api/v1
+
+# Replace with your admin / user credentials.
+@adminEmail = REPLACE_WITH_ADMIN_EMAIL
+@adminPassword = REPLACE_WITH_ADMIN_PASSWORD
+@userEmail = apitest+manual@example.com
+@userPassword = CorrectHorse123!
+
+
+### admin login
+# @name adminLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{adminEmail}}", "password": "{{adminPassword}}" }
+
+@adminToken = {{adminLogin.response.body.token}}
+
+
+### user login (must already be verified)
+# @name userLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "emailOrUsername": "{{userEmail}}", "password": "{{userPassword}}" }
+
+@userToken = {{userLogin.response.body.token}}
+
+
+# Replace these with real ObjectIds from your products collection.
+#   @productUsd      : a live, active product priced in USD with stockQty >= 10
+#   @productEur      : a live, active product priced in EUR (different currency from above)
+#   @productLowStock : a live, active product with a small, known stockQty (e.g., 2 or 3)
+#   @productDraft    : a product with isActive:false (or deleted)
+@productUsd = REPLACE_WITH_USD_PRODUCT_ID
+@productEur = REPLACE_WITH_EUR_PRODUCT_ID
+@productLowStock = REPLACE_WITH_LOW_STOCK_PRODUCT_ID
+@productDraft = REPLACE_WITH_DRAFT_PRODUCT_ID
+
+
+# ===========================================================================
+# 1. Auth boundary
+# ===========================================================================
+
+### probe 1 — no token on GET /cart → 401
+GET {{base}}/cart
+
+
+### probe 1b — bad token → 401
+GET {{base}}/cart
+Authorization: Bearer notajwt
+
+
+# ===========================================================================
+# 2. Lazy upsert + idempotency  [REVIEW FIX 1.1]
+# ===========================================================================
+
+### probe 3 — first GET creates an empty cart
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 4 — second GET returns the SAME cart (same _id, no E11000)  [REVIEW FIX 1.1]
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 3. Add items + populate allowlist  [REVIEW FIX 1.2]
+# ===========================================================================
+
+### probe 6 — add a USD product, qty 2 → 201
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productUsd}}", "quantity": 2 }
+
+
+### probe 7 — GET /cart, assert populated product fields are ONLY:  [REVIEW FIX 1.2]
+###            name, slug, price, currency, stockQty, isActive, deletedAt, images
+###            (no description, no category, no createdAt/updatedAt)
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 8 — add the SAME product again, qty 1 → 201, quantity now 3
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productUsd}}", "quantity": 1 }
+
+
+# ===========================================================================
+# 4. ObjectId + product-availability validation
+# ===========================================================================
+
+### probe 9 — invalid ObjectId in body → 404 "product not found"
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "not-an-objectid", "quantity": 1 }
+
+
+### probe 10 — inactive / soft-deleted product → 404 "product not found"
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productDraft}}", "quantity": 1 }
+
+
+# ===========================================================================
+# 5. Stock contract (advisory)
+# ===========================================================================
+
+### probe 11 — qty exceeds stockQty → 409 "insufficient stock"
+### Use productLowStock (e.g. stockQty:3) so qty 50 is past stock but within joi max(999).
+### If you set qty 1000+, joi short-circuits with 400 before the 409 branch fires.
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productLowStock}}", "quantity": 50 }
+
+
+# ===========================================================================
+# 6. Currency lock + mixed-currency reject
+# ===========================================================================
+
+### probe 12 — add a different-currency product → 409 "mixed-currency cart not supported"
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productEur}}", "quantity": 1 }
+
+
+### probe 13 — add a same-currency product → 201
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productLowStock}}", "quantity": 1 }
+
+
+# ===========================================================================
+# 7. PATCH (absolute quantity) + 404 on missing line  [REVIEW FIX 2.1]
+# ===========================================================================
+
+### probe 14 — set quantity to 1 → 200
+PATCH {{base}}/cart/items/{{productUsd}}
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "quantity": 1 }
+
+
+### probe 15 — quantity: 0 → 400 (joi)
+PATCH {{base}}/cart/items/{{productUsd}}
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "quantity": 0 }
+
+
+### probe 16 — quantity > stockQty → 409 "insufficient stock"  [REVIEW FIX coverage]
+### Use a value within joi max(999) but above stockQty (e.g. 50 against stockQty:3).
+### 9999 would short-circuit to 400 in joi before reaching the 409 branch.
+PATCH {{base}}/cart/items/{{productLowStock}}
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "quantity": 50 }
+
+
+### probe 17 — PATCH on productId NOT in cart → 404 "item not in cart"  [REVIEW FIX 2.1]
+PATCH {{base}}/cart/items/64b8f7a1c2d3e4f5a6b7c8d9
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "quantity": 1 }
+
+
+# ===========================================================================
+# 8. DELETE single item + 404 on missing line  [REVIEW FIX 2.1]
+# ===========================================================================
+
+### probe 18 — remove a present line → 200
+DELETE {{base}}/cart/items/{{productLowStock}}
+Authorization: Bearer {{userToken}}
+
+
+### probe 19 — DELETE on productId NOT in cart → 404 "item not in cart"  [REVIEW FIX 2.1]
+DELETE {{base}}/cart/items/64b8f7a1c2d3e4f5a6b7c8d9
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 9. Currency cleanup on last-line removal  [REVIEW FIX 1.3]
+# ===========================================================================
+
+### probe 20a — remove the remaining USD line (cart now empty)
+DELETE {{base}}/cart/items/{{productUsd}}
+Authorization: Bearer {{userToken}}
+
+
+### probe 20b — GET /cart → items: [], currency: null  [REVIEW FIX 1.3]
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 20c — add an EUR product on the now-empty cart → 201  [REVIEW FIX 1.3]
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productEur}}", "quantity": 1 }
+
+
+# ===========================================================================
+# 10. DELETE entire cart
+# ===========================================================================
+
+### probe 21 — DELETE /cart → 200 "cart cleared"
+DELETE {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 21b — GET /cart confirms items: [], currency: null
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+# ===========================================================================
+# 11. Deleted-product line stays visible AND remains manageable  [REVIEW FIX 1.2]
+# ===========================================================================
+# Sequence: add USD product, admin soft-deletes it, user GETs cart, user PATCHes
+# the qty (allowed for soft-deleted products), user DELETEs the line.
+
+### setup — re-add USD product
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productUsd}}", "quantity": 2 }
+
+
+### admin soft-deletes the product (uses scripts/products.http endpoint)
+DELETE {{base}}/admin/products/{{productUsd}}
+Authorization: Bearer {{adminToken}}
+
+
+### probe 22 — GET /cart still shows the line, but hasUnavailableItems: true,
+###            and subtotal excludes the unavailable line.
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 22b — PATCH on a soft-deleted line → 200, qty updated  [REVIEW FIX 1.2]
+PATCH {{base}}/cart/items/{{productUsd}}
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "quantity": 1 }
+
+
+### probe 22c — DELETE on a soft-deleted line → 200
+DELETE {{base}}/cart/items/{{productUsd}}
+Authorization: Bearer {{userToken}}
+
+
+### cleanup — admin restores the product so other probes still pass
+POST {{base}}/admin/products/{{productUsd}}/restore
+Authorization: Bearer {{adminToken}}
+
+
+# ===========================================================================
+# 12. Suspended user
+# ===========================================================================
+# Run the suspend probe from scripts/users.http first to suspend the regular
+# user, then run probe 23. After verification, unsuspend.
+
+### probe 23 — suspended user on GET /cart → 403 "account suspended"
+GET {{base}}/cart
+Authorization: Bearer {{userToken}}
+
+
+### probe 23b — suspended user on POST /cart/items → 403 "account suspended"
+POST {{base}}/cart/items
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{ "productId": "{{productUsd}}", "quantity": 1 }
+
+
+# ===========================================================================
+# 13. Existing flows untouched (regression checks)
+# ===========================================================================
+
+### auth/register still works
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "regression+cart@example.com",
+  "username": "regcart",
+  "password": "CorrectHorse123!"
+}
+
+
+### users/me still works for the regular user (when active)
+GET {{base}}/users/me
+Authorization: Bearer {{userToken}}
+
+
+### public products list still reachable
+GET {{base}}/products

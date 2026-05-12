@@ -1,0 +1,94 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fgarrytan%2Fgbrain%2Ftree%2Fmain%2Fdocs
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "garrytan" [ref=e36] [cursor=pointer]:
+            - /url: /garrytan
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "gbrain" [ref=e39] [cursor=pointer]:
+              - /url: /garrytan/gbrain
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 1.9k" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e48]
+                - text: Fork
+                - generic "1,894" [ref=e50]: 1.9k
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2Fgarrytan%2Fgbrain
+                - img [ref=e54]
+                - text: Star
+                - generic "14605 users starred this repository" [ref=e56]: 14.6k
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /garrytan/gbrain
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues 120" [ref=e65] [cursor=pointer]:
+              - /url: /garrytan/gbrain/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+              - generic "120" [ref=e70]
+          - listitem [ref=e71]:
+            - link "Pull requests 210" [ref=e72] [cursor=pointer]:
+              - /url: /garrytan/gbrain/pulls
+              - img [ref=e73]
+              - generic [ref=e75]: Pull requests
+              - generic "210" [ref=e76]
+          - listitem [ref=e77]:
+            - link "Actions" [ref=e78] [cursor=pointer]:
+              - /url: /garrytan/gbrain/actions
+              - img [ref=e79]
+              - generic [ref=e81]: Actions
+          - listitem [ref=e82]:
+            - link "Projects" [ref=e83] [cursor=pointer]:
+              - /url: /garrytan/gbrain/projects
+              - img [ref=e84]
+              - generic [ref=e86]: Projects
+          - listitem [ref=e87]:
+            - link "Security and quality" [ref=e88] [cursor=pointer]:
+              - /url: /garrytan/gbrain/security
+              - img [ref=e89]
+              - generic [ref=e91]: Security and quality
+          - listitem [ref=e92]:
+            - link "Insights" [ref=e93] [cursor=pointer]:
+              - /url: /garrytan/gbrain/pulse
+              - img [ref=e94]
+              - generic [ref=e96]: Insights
+    - generic [ref=e109]:
+      - img [ref=e110]
+      - generic [ref=e112]:
+        - generic [ref=e113]: Error loading page
+        - generic [ref=e114]: An unexpected error occured. Try reloading the page.
+      - link "go to default branch" [ref=e115] [cursor=pointer]:
+        - /url: /garrytan/gbrain?files=1
+        - generic [ref=e117]: Go to default branch
